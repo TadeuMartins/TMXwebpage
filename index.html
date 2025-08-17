@@ -87,11 +87,11 @@
       },
       {
         "src": "assets/WhatsApp Image 2025-08-17 at 15.42.36.jpeg",
-        "descricao": "Lançamento do livro "A Revolução Silenciosa da IA" com Fabio Gandour."
+        "descricao": "Lançamento do livro \"A Revolução Silenciosa da IA\" com Fabio Gandour."
       },
       {
         "src": "assets/WhatsApp Image 2025-08-17 at 15.42.56.jpeg",
-        "descricao": "Lançamento do livro "A Revolução Silenciosa da IA" com Fabio Gandour."
+        "descricao": "Lançamento do livro \"A Revolução Silenciosa da IA\" com Fabio Gandour."
       },
       {
         "src": "assets/WhatsApp Image 2025-08-17 at 15.47.24 (1).jpeg",
@@ -113,11 +113,13 @@
   },
   "tmxsmartpm": {
     "enabled": true,
+    "image": "assets/TMX SmartPM.jpg",
     "subtitulo": "Integrado ao Microsoft Project para criar e atualizar cronogramas, com dashboards que simplificam reuniões e status do projeto.",
     "cta": "Quero Saber Mais"
   },
   "livro": {
     "titulo": "Além do Algoritmo — A Revolução Silenciosa da IA",
+    "image": "assets/capa-livro.jpeg",
     "url": "https://www.amazon.com.br/Ale%CC%81m-Algoritmo-Revoluc%CC%A7a%CC%83o-Silenciosa-IA-ebook/dp/B0D36B132X"
   },
   "linkedin": {
@@ -291,7 +293,9 @@
               el('a', {href:'#contato', class:'inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-zinc-900 hover:bg-blue-50'}, [txt(C.tmxsmartpm.cta||'Quero Saber Mais')])
             ])
           ]),
-          el('div', {}, [ el('div', {class:'aspect-[16/10] w-full rounded-2xl border border-white/10 bg-white/5'}) ])
+          el('div', {}, [ 
+            el('img', {src: C.tmxsmartpm.image || '', alt: 'TMX SmartPM Screenshot', class:'aspect-[16/10] w-full rounded-2xl border border-white/10 object-cover'}) 
+          ])
         ])
       ]);
       root.appendChild(pm);
@@ -309,7 +313,9 @@
               el('a', {href:C.livro.url, target:'_blank', class:'inline-flex items-center justify-center rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold hover:bg-white/10'}, [txt('Ver na Amazon')])
             ])
           ]),
-          el('div', {}, [ el('div', {class:'aspect-[3/4] w-full rounded-2xl border border-white/10 bg-white/5'}) ])
+          el('div', {}, [ 
+            el('img', {src: C.livro.image || '', alt: 'Capa do Livro', class:'aspect-[3/4] w-full rounded-2xl border border-white/10 object-cover'}) 
+          ])
         ])
       ]);
       root.appendChild(livro);
