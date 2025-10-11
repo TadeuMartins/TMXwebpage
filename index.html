@@ -15,6 +15,9 @@
     @media (min-width: 1024px) { .masonry { column-count: 3; } }
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.show { opacity: 1; transform: translateY(0); }
+    .hero-slideshow { position: relative; }
+    .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.5s ease-in-out; }
+    .hero-slide.active { opacity: 1; }
   </style>
 </head>
 <body class="bg-blue-950 text-white">
@@ -23,23 +26,73 @@
   <!-- ====== CONTEÚDO EDITÁVEL (JSON) ====== -->
   <script id="site-content" type="application/json">{
   "titulo": "TMX Smart Industry - Tadeu Martins",
+  "currentLang": "pt",
   "theme": {
-    "heroImage": "assets/Picture1.png",
+    "heroImages": [
+      "assets/Suporte linguas.jpg",
+      "assets/Resource allocation.jpg",
+      "assets/Status report.jpg",
+      "assets/Gantt.jpg"
+    ],
     "overlay": "bg-gradient-to-b from-black/70 via-black/50 to-blue-950/70",
     "accent": "text-blue-400"
   },
+  "languages": {
+    "pt": "Português",
+    "en": "English",
+    "es": "Español"
+  },
   "header": {
-    "brand": "TMX SMART INDUSTRY",
-    "owner": "Tadeu Martins"
+    "pt": {
+      "brand": "TMX SMART INDUSTRY",
+      "owner": "Tadeu Martins",
+      "navSmartPM": "TMX SmartPM",
+      "navAbout": "Sobre",
+      "navContact": "Contato"
+    },
+    "en": {
+      "brand": "TMX SMART INDUSTRY",
+      "owner": "Tadeu Martins",
+      "navSmartPM": "TMX SmartPM",
+      "navAbout": "About",
+      "navContact": "Contact"
+    },
+    "es": {
+      "brand": "TMX SMART INDUSTRY",
+      "owner": "Tadeu Martins",
+      "navSmartPM": "TMX SmartPM",
+      "navAbout": "Acerca de",
+      "navContact": "Contacto"
+    }
   },
   "hero": {
-    "kicker": "TMX Smart Industry",
-    "heading": "Ferramentas e Frameworks para Gerentes Industriais e de Projetos",
-    "subheading": "A TMX Smart Industry surge com foco de criar ferramentas e frameworks para resolver as principais dores de gerentes industriais e gerentes de projetos, utilizando tecnologia e metodologias comprovadas.",
-    "cta_primary_text": "Conheça o TMX SmartPM",
-    "cta_primary_href": "#tmxsmartpm",
-    "cta_secondary_text": "Sobre mim",
-    "cta_secondary_href": "#sobre"
+    "pt": {
+      "kicker": "TMX Smart Industry",
+      "heading": "Ferramentas e Frameworks para Gerentes Industriais e de Projetos",
+      "subheading": "A TMX Smart Industry surge com foco de criar ferramentas e frameworks para resolver as principais dores de gerentes industriais e gerentes de projetos, utilizando tecnologia e metodologias comprovadas.",
+      "cta_primary_text": "Conheça o TMX SmartPM",
+      "cta_primary_href": "#tmxsmartpm",
+      "cta_secondary_text": "Sobre mim",
+      "cta_secondary_href": "#sobre"
+    },
+    "en": {
+      "kicker": "TMX Smart Industry",
+      "heading": "Tools and Frameworks for Industrial and Project Managers",
+      "subheading": "TMX Smart Industry emerges with a focus on creating tools and frameworks to solve the main pain points of industrial and project managers, using proven technology and methodologies.",
+      "cta_primary_text": "Discover TMX SmartPM",
+      "cta_primary_href": "#tmxsmartpm",
+      "cta_secondary_text": "About me",
+      "cta_secondary_href": "#sobre"
+    },
+    "es": {
+      "kicker": "TMX Smart Industry",
+      "heading": "Herramientas y Frameworks para Gerentes Industriales y de Proyectos",
+      "subheading": "TMX Smart Industry surge con el enfoque de crear herramientas y frameworks para resolver los principales problemas de los gerentes industriales y de proyectos, utilizando tecnología y metodologías probadas.",
+      "cta_primary_text": "Conoce TMX SmartPM",
+      "cta_primary_href": "#tmxsmartpm",
+      "cta_secondary_text": "Sobre mí",
+      "cta_secondary_href": "#sobre"
+    }
   },
   "trajetoria": "Minha história profissional começou cedo, movida pela curiosidade, pela vontade de aprender e pela determinação em transformar oportunidades em conquistas.\n\nAos 14 anos, após concluir meu primeiro curso de eletricidade básica, tive a chance de ingressar no mercado de trabalho como guarda mirim. Foi o primeiro passo em uma jornada que me ensinaria a importância da disciplina, da responsabilidade e do esforço diário.\n\nAos 18 anos, iniciei minha carreira técnica na Cimento Ribeirão (posteriormente adquirida pela Votorantim Cimentos), onde atuei em manutenção de campo e no Planejamento e Controle de Manutenção (PCM). Foram anos de aprendizado intenso até a hibernação da unidade industrial, que coincidiu com o período em que eu cursava a graduação em Engenharia Elétrica graças a uma bolsa integral do Prouni.\n\nNesse momento, surgiu a oportunidade de empreender. Nasceu a Engetec, uma empresa de manutenção elétrica voltada para pequenas e médias indústrias da região. Nosso objetivo era oferecer algo que até então não era comum nesses ambientes: a manutenção preventiva e soluções de automação. Liderando uma equipe de quatro profissionais, atendemos contratos relevantes e realizamos projetos como a montagem de painéis e sistemas de automação para uma termoelétrica, uma unidade de beneficiamento de resina e uma fábrica de argamassas. Essa fase me deu uma forte visão empreendedora e prática sobre gestão, execução e inovação.\n\nCom a conclusão da faculdade, decidi voltar ao ambiente das grandes corporações para expandir minha experiência. Foi assim que ingressei na Intercement, inicialmente em um estágio de férias, e ao longo dos anos ocupei diferentes funções até me tornar Coordenador de Planejamento e Controle de Manutenção. Nessa posição, tive sob minha responsabilidade um time de 23 profissionais, entre técnicos e engenheiros, além da gestão de confiabilidade, novos projetos e um orçamento anual de dezenas de milhões de reais. Essa experiência me consolidou como líder e gestor, capaz de unir visão estratégica e conhecimento técnico em contextos complexos e desafiadores.\n\nEm 2023, decidi realizar uma transição que já vinha amadurecendo: levar minha experiência de mais de uma década no chão de fábrica para o lado da tecnologia industrial. Foi assim que ingressei na Siemens, atuando como Gerente de Projetos de Software para indústrias de processo.\n\nNa Siemens, além de projetos de digitalização para grandes clientes industriais, participei de iniciativas internas que tiveram repercussão global, como:\n\nA criação de uma aplicação baseada em GenAI, que democratizou o acesso ao conhecimento sobre softwares Siemens em equipes ao redor do mundo e foi reconhecida no Prêmio Anual de Projetos de 2025 na categoria Colaboração.\n\nO desenvolvimento dos dashboards do PMO Global, que trouxeram uma visão unificada e orientada a dados para apoiar gerentes de serviço e diretoria na tomada de decisão.\n\nEssas experiências reforçaram minha motivação: aprender continuamente e aplicar tecnologia como motor de transformação para a indústria.\n\nMinha jornada acadêmica acompanhou essa evolução. Iniciei com o técnico em Eletrotécnica, segui para a graduação em Engenharia Elétrica, concluí um MBA em Gestão Empresarial pela FGV e obtive certificações de destaque, como o Project Management Professional (PMP) pelo PMI e AI Engineer pela Microsoft, além de diversos cursos de curta duração nacionais e internacionais. Acredito que conhecimento só tem valor quando aplicado na prática, e foi justamente na combinação de teoria com experiência de campo que construí minha visão diferenciada.\n\nHoje, minha trajetória se resume em um propósito: conectar o mundo físico da indústria com o universo digital, unindo experiência prática, gestão de projetos e inovação tecnológica para gerar valor real e sustentável. \n\n Em meu tempo livre, busco desenvolver técnicas e ferramentas voltadas para uma gestão de projetos mais eficiente, com isso nasceu a TMX Smart Industry, e a primeira ferramenta chamada TMX SmartPM, que vem pra eliminar uma das principais dores de gerentes de projeto e gerentes de manutenção em todo mundo, abaixo você poderá ver em mais detalhes.",
   "formacoes": [
@@ -114,9 +167,30 @@
   "tmxsmartpm": {
     "enabled": true,
     "image": "assets/TMX SmartPM.jpg",
-    "titulo": "Pré Lançamento TMX Smart PM : SmartPM – O futuro da gestão de cronogramas com IA chegou",
-    "introducao": "O SmartPM é um software inteligente de criação e gestão de cronogramas que une a praticidade da Inteligência Artificial Generativa à robustez do Microsoft Project.\nCrie, analise e gerencie projetos em segundos — de forma simples, visual e conectada.\n\nCom o SmartPM, você digita o escopo do projeto em linguagem natural e a IA transforma automaticamente em um cronograma completo, com tarefas, durações, dependências e marcos.\nE se você já tem um arquivo no Project, o SmartPM é capaz de extrair, analisar, otimizar e devolver o cronograma aprimorado, tudo em poucos cliques.",
-    "destaque": "💡 O que torna o SmartPM único",
+    "pt": {
+      "prelaunch": "Pré Lançamento",
+      "titulo": "TMX Smart PM: SmartPM – O futuro da gestão de cronogramas com IA chegou",
+      "introducao": "O SmartPM é um software inteligente de criação e gestão de cronogramas que une a praticidade da Inteligência Artificial Generativa à robustez do Microsoft Project.\nCrie, analise e gerencie projetos em segundos — de forma simples, visual e conectada.\n\nCom o SmartPM, você digita o escopo do projeto em linguagem natural e a IA transforma automaticamente em um cronograma completo, com tarefas, durações, dependências e marcos.\nE se você já tem um arquivo no Project, o SmartPM é capaz de extrair, analisar, otimizar e devolver o cronograma aprimorado, tudo em poucos cliques.",
+      "destaque": "💡 O que torna o SmartPM único",
+      "cta": "🚀 Clique aqui para conhecer o SmartPM",
+      "cta_contact": "Entre em Contato"
+    },
+    "en": {
+      "prelaunch": "Pre-Launch",
+      "titulo": "TMX Smart PM: SmartPM – The future of AI-powered schedule management is here",
+      "introducao": "SmartPM is an intelligent schedule creation and management software that combines the practicality of Generative Artificial Intelligence with the robustness of Microsoft Project.\nCreate, analyze and manage projects in seconds — in a simple, visual and connected way.\n\nWith SmartPM, you describe the project scope in natural language and AI automatically transforms it into a complete schedule, with tasks, durations, dependencies and milestones.\nAnd if you already have a Project file, SmartPM can extract, analyze, optimize and return the improved schedule, all in a few clicks.",
+      "destaque": "💡 What makes SmartPM unique",
+      "cta": "🚀 Click here to discover SmartPM",
+      "cta_contact": "Get in Touch"
+    },
+    "es": {
+      "prelaunch": "Pre Lanzamiento",
+      "titulo": "TMX Smart PM: SmartPM – El futuro de la gestión de cronogramas con IA ha llegado",
+      "introducao": "SmartPM es un software inteligente de creación y gestión de cronogramas que une la practicidad de la Inteligencia Artificial Generativa con la robustez de Microsoft Project.\nCree, analice y gestione proyectos en segundos — de forma simple, visual y conectada.\n\nCon SmartPM, usted describe el alcance del proyecto en lenguaje natural y la IA lo transforma automáticamente en un cronograma completo, con tareas, duraciones, dependencias e hitos.\nY si ya tiene un archivo de Project, SmartPM puede extraer, analizar, optimizar y devolver el cronograma mejorado, todo en pocos clics.",
+      "destaque": "💡 Qué hace único a SmartPM",
+      "cta": "🚀 Haga clic aquí para conocer SmartPM",
+      "cta_contact": "Póngase en Contacto"
+    },
     "features": [
       {
         "icon": "🧠",
@@ -186,7 +260,6 @@
         "descricao": "Assistente de IA exclusivo para criar, modificar e analisar gaps do projeto."
       }
     ],
-    "cta": "Acessar SmartPM",
     "url": "https://www.smartpm.com.br/"
   },
   "livro": {
@@ -206,8 +279,15 @@
 
   <script>
   (function(){
+    let currentLang = localStorage.getItem('tmx-lang') || 'pt';
     const C = JSON.parse(document.getElementById('site-content').textContent);
     document.title = C.titulo || document.title;
+
+    // Helper to get translated text
+    const t = (obj) => {
+      if (typeof obj === 'string') return obj;
+      return obj[currentLang] || obj['pt'] || obj['en'] || '';
+    };
 
     const el = (tag, attrs={}, children=[]) => {
       const n = document.createElement(tag);
@@ -220,43 +300,73 @@
       (Array.isArray(children)?children:[children]).filter(Boolean).forEach(ch => n.appendChild(ch));
       return n;
     };
-    const txt = (t) => document.createTextNode(t);
+    const txt = (str) => document.createTextNode(str);
     const root = document.getElementById('root');
 
+    // Function to switch language
+    function switchLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('tmx-lang', lang);
+      root.innerHTML = '';
+      renderPage();
+    }
+
+    function renderPage() {
     // NAVBAR
-    const navbar = el('header', {class:'fixed inset-x-0 top-0 z-50'},
+    const navbar = el('header', {class:'fixed inset-x-0 top-0 z-50 bg-blue-950/80 backdrop-blur-sm'},
       el('div', {class:'mx-auto max-w-7xl px-6'},
         el('div', {class:'flex items-center justify-between gap-4 py-4'},[
           el('a', {href:'#home', class:'flex items-center gap-3'}, [
             el('div', {class:'flex h-9 w-9 items-center justify-center rounded-xl bg-white/10'}, [el('i', {'data-lucide':'factory', class:'w-5 h-5 text-white'})]),
             el('div', {class:'leading-none'}, [
-              el('p', {class:'text-sm font-semibold tracking-widest text-white'}, [txt(C.header?.brand || 'TMX SMART INDUSTRY')]),
-              el('p', {class:'-mt-1 text-[11px] uppercase tracking-[0.25em] text-blue-200'}, [txt(C.header?.owner || 'Tadeu Martins')])
+              el('p', {class:'text-sm font-semibold tracking-widest text-white'}, [txt(t(C.header).brand || 'TMX SMART INDUSTRY')]),
+              el('p', {class:'-mt-1 text-[11px] uppercase tracking-[0.25em] text-blue-200'}, [txt(t(C.header).owner || 'Tadeu Martins')])
             ])
           ]),
           el('nav', {class:'hidden md:flex items-center gap-6 text-blue-100'}, [
-            el('a', {href:'#tmxsmartpm', class:'hover:text-white'}, [txt('TMX SmartPM')]),
-            el('a', {href:'#sobre', class:'hover:text-white'}, [txt('Sobre')]),
-            el('a', {href:'#contato', class:'hover:text-white'}, [txt('Contato')])
+            el('a', {href:'#tmxsmartpm', class:'hover:text-white'}, [txt(t(C.header).navSmartPM || 'TMX SmartPM')]),
+            el('a', {href:'#sobre', class:'hover:text-white'}, [txt(t(C.header).navAbout || 'Sobre')]),
+            el('a', {href:'#contato', class:'hover:text-white'}, [txt(t(C.header).navContact || 'Contato')])
           ]),
-          el('a', {href: (C.linkedin?.profile || '#contato'), target:'_blank', class:'hidden md:inline-block rounded-xl bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/20'}, [txt('LinkedIn')])
+          el('div', {class:'flex items-center gap-3'}, [
+            // Language switcher
+            el('div', {class:'flex gap-1 rounded-lg bg-white/10 p-1'}, 
+              Object.entries(C.languages || {}).map(([lang, name]) =>
+                el('button', {
+                  class: `px-2 py-1 text-xs font-semibold rounded transition ${currentLang === lang ? 'bg-white text-zinc-900' : 'text-white hover:bg-white/20'}`,
+                  onclick: () => switchLanguage(lang)
+                }, [txt(lang.toUpperCase())])
+              )
+            ),
+            el('a', {href: (C.linkedin?.profile || '#contato'), target:'_blank', class:'hidden md:inline-block rounded-xl bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/20'}, [txt('LinkedIn')])
+          ])
         ])
       )
     );
     root.appendChild(navbar);
 
-    // HERO
+    // HERO with slideshow
+    const heroImages = C.theme?.heroImages || [];
     const hero = el('section', {id:'home', class:'relative h-[80vh] min-h-[520px] w-full overflow-hidden'},[
-      el('img', {src: (C.theme?.heroImage || ''), alt:'Capa', class:'absolute inset-0 h-full w-full object-cover'}),
+      // Slideshow container
+      el('div', {class:'hero-slideshow absolute inset-0'}, 
+        heroImages.map((img, idx) => 
+          el('img', {
+            src: img, 
+            alt: 'SmartPM Screenshot ' + (idx + 1), 
+            class: `hero-slide h-full w-full object-cover ${idx === 0 ? 'active' : ''}`
+          })
+        )
+      ),
       el('div', {class:'absolute inset-0 ' + (C.theme?.overlay || '')}),
       el('div', {class:'relative z-10 mx-auto flex h-full max-w-7xl items-center px-6'}, [
         el('div', {class:'max-w-2xl'}, [
-          el('p', {class:'text-sm font-semibold uppercase tracking-widest text-blue-200'}, [txt(C.hero?.kicker || '')]),
-          el('h1', {class:'mt-3 text-4xl font-bold tracking-tight sm:text-6xl'}, [txt(C.hero?.heading || '')]),
-          el('p', {class:'mt-4 text-lg text-blue-100'}, [txt(C.hero?.subheading || '')]),
+          el('p', {class:'text-sm font-semibold uppercase tracking-widest text-blue-200'}, [txt(t(C.hero).kicker || '')]),
+          el('h1', {class:'mt-3 text-4xl font-bold tracking-tight sm:text-6xl'}, [txt(t(C.hero).heading || '')]),
+          el('p', {class:'mt-4 text-lg text-blue-100'}, [txt(t(C.hero).subheading || '')]),
           el('div', {class:'mt-6 flex flex-wrap gap-3'}, [
-            el('a', {href:(C.hero?.cta_primary_href||'#trajetoria'), class:'rounded-xl bg-white px-5 py-3 text-sm font-semibold text-zinc-900 shadow-soft hover:bg-blue-50'}, [txt(C.hero?.cta_primary_text || 'Começar')]),
-            el('a', {href:(C.hero?.cta_secondary_href||'#contato'), target:'_blank', class:'rounded-xl border border-white/30 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10'}, [txt(C.hero?.cta_secondary_text || 'Saiba mais')])
+            el('a', {href:(t(C.hero).cta_primary_href||'#trajetoria'), class:'rounded-xl bg-white px-5 py-3 text-sm font-semibold text-zinc-900 shadow-soft hover:bg-blue-50'}, [txt(t(C.hero).cta_primary_text || 'Começar')]),
+            el('a', {href:(t(C.hero).cta_secondary_href||'#contato'), target:'_blank', class:'rounded-xl border border-white/30 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10'}, [txt(t(C.hero).cta_secondary_text || 'Saiba mais')])
           ])
         ])
       ]),
@@ -267,18 +377,46 @@
     ]);
     root.appendChild(hero);
 
+    // Start hero slideshow
+    if (heroImages.length > 1) {
+      let currentSlide = 0;
+      setInterval(() => {
+        const slides = document.querySelectorAll('.hero-slide');
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }, 4000);
+    }
+
     // TMX SmartPM - First priority section
     if (C.tmxsmartpm?.enabled) {
       const pm = el('section', {id:'tmxsmartpm', class:'mx-auto max-w-7xl px-6 py-16'}, [
         // Título principal
         el('div', {class:'mx-auto max-w-4xl text-center mb-12'}, [
-          el('p', {class:'mb-2 text-sm font-semibold uppercase tracking-widest text-blue-200'}, [txt('Pré Lançamento')]),
-          el('h2', {class:'text-3xl font-bold tracking-tight sm:text-5xl mb-6'}, [txt(C.tmxsmartpm.titulo || 'TMX SmartPM')]),
-          el('div', {class:'space-y-4 text-lg text-blue-100'}, (C.tmxsmartpm.introducao||'').split('\n\n').map(p => el('p', {}, [txt(p)])))
+          el('p', {class:'mb-2 text-sm font-semibold uppercase tracking-widest text-blue-200'}, [txt(t(C.tmxsmartpm).prelaunch)]),
+          el('h2', {class:'text-3xl font-bold tracking-tight sm:text-5xl mb-6'}, [txt(t(C.tmxsmartpm).titulo || 'TMX SmartPM')]),
+          el('div', {class:'space-y-4 text-lg text-blue-100'}, (t(C.tmxsmartpm).introducao||'').split('\n\n').map(p => el('p', {}, [txt(p)])))
+        ]),
+        // Prominent CTA Banner
+        el('div', {class:'mx-auto max-w-5xl mb-12'}, [
+          el('a', {
+            href: (C.tmxsmartpm.url || '#contato'),
+            target: '_blank',
+            class: 'block relative overflow-hidden rounded-3xl bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 p-1 shadow-2xl hover:shadow-amber-500/50 transition-all group'
+          }, [
+            el('div', {class:'bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 rounded-[22px] px-8 py-6 sm:px-12 sm:py-8 text-center'}, [
+              el('h3', {class:'text-2xl sm:text-4xl font-bold text-white mb-3 drop-shadow-lg'}, [txt(t(C.tmxsmartpm).cta)]),
+              el('p', {class:'text-white/90 text-sm sm:text-base mb-4'}, [txt(currentLang === 'pt' ? 'Transforme a gestão de cronogramas com IA' : currentLang === 'en' ? 'Transform schedule management with AI' : 'Transforme la gestión de cronogramas con IA')]),
+              el('div', {class:'inline-flex items-center gap-2 text-white font-semibold'}, [
+                txt(currentLang === 'pt' ? 'Acessar agora' : currentLang === 'en' ? 'Access now' : 'Acceder ahora'),
+                el('i', {'data-lucide':'arrow-right', class:'h-5 w-5 group-hover:translate-x-1 transition-transform'})
+              ])
+            ])
+          ])
         ]),
         // Destaque
         el('div', {class:'mx-auto max-w-4xl text-center mb-8'}, [
-          el('h3', {class:'text-2xl font-bold tracking-tight sm:text-3xl'}, [txt(C.tmxsmartpm.destaque || '')])
+          el('h3', {class:'text-2xl font-bold tracking-tight sm:text-3xl'}, [txt(t(C.tmxsmartpm).destaque || '')])
         ]),
         // Features grid
         el('div', {class:'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12'}, (C.tmxsmartpm.features||[]).map(feature => 
@@ -311,8 +449,8 @@
             el('img', {src: C.tmxsmartpm.image || '', alt: 'TMX SmartPM Screenshot', class:'aspect-[16/10] w-full rounded-2xl border border-white/10 object-cover shadow-soft'}) 
           ]),
           el('div', {class:'flex flex-col gap-4'}, [
-            el('a', {href:(C.tmxsmartpm.url||'#contato'), target:'_blank', class:'inline-flex items-center justify-center rounded-xl bg-white px-6 py-4 text-base font-semibold text-zinc-900 hover:bg-blue-50 shadow-soft'}, [txt(C.tmxsmartpm.cta||'Quero Saber Mais')]),
-            el('a', {href:'#contato', class:'inline-flex items-center justify-center rounded-xl border border-white/30 px-6 py-4 text-base font-semibold text-white hover:bg-white/10'}, [txt('Entre em Contato')])
+            el('a', {href:(C.tmxsmartpm.url||'#contato'), target:'_blank', class:'inline-flex items-center justify-center rounded-xl bg-white px-6 py-4 text-base font-semibold text-zinc-900 hover:bg-blue-50 shadow-soft'}, [txt(currentLang === 'pt' ? 'Acessar SmartPM' : currentLang === 'en' ? 'Access SmartPM' : 'Acceder a SmartPM')]),
+            el('a', {href:'#contato', class:'inline-flex items-center justify-center rounded-xl border border-white/30 px-6 py-4 text-base font-semibold text-white hover:bg-white/10'}, [txt(t(C.tmxsmartpm).cta_contact)])
           ])
         ])
       ]);
@@ -529,6 +667,10 @@
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
     }
+    }
+
+    // Initial render
+    renderPage();
   })();
   </script>
 </body>
