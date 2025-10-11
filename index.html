@@ -149,6 +149,43 @@
         "descricao": "A IA aprende com seus projetos anteriores e sugere melhorias a cada nova entrega."
       }
     ],
+    "screenshots": [
+      {
+        "src": "assets/suporte linguas.jpg",
+        "titulo": "Suporte Multilíngue",
+        "descricao": "Interface disponível em Inglês, Português e Espanhol para equipes globais."
+      },
+      {
+        "src": "assets/Resource allocation.jpg",
+        "titulo": "Análise de Performance por Recursos",
+        "descricao": "Dashboard de BI exclusivo com visão detalhada da alocação e performance de recursos."
+      },
+      {
+        "src": "assets/Status report.jpg",
+        "titulo": "Status Report Automático",
+        "descricao": "Relatórios executivos gerados automaticamente, prontos para apresentação."
+      },
+      {
+        "src": "assets/Gantt.jpg",
+        "titulo": "Visualização Gantt Online",
+        "descricao": "Edite e visualize cronogramas em formato Gantt diretamente no navegador."
+      },
+      {
+        "src": "assets/Cards Kanan.jpg",
+        "titulo": "Gestão por Kanban",
+        "descricao": "Visualize e gerencie projetos híbridos e ágeis através de cards Kanban."
+      },
+      {
+        "src": "assets/Salvar TMX ou Enviar do MS Project.jpg",
+        "titulo": "Integração com MS Project",
+        "descricao": "Salve projetos no formato .TMX ou sincronize diretamente com MS Project (.mpp)."
+      },
+      {
+        "src": "assets/Agente de IA.jpg",
+        "titulo": "Agente de IA Inteligente",
+        "descricao": "Assistente de IA exclusivo para criar, modificar e analisar gaps do projeto."
+      }
+    ],
     "cta": "Acessar SmartPM",
     "url": "https://www.smartpm.com.br/"
   },
@@ -251,6 +288,23 @@
             el('p', {class:'text-sm text-blue-100'}, [txt(feature.descricao)])
           ])
         )),
+        // Screenshots Gallery
+        (C.tmxsmartpm.screenshots && C.tmxsmartpm.screenshots.length > 0) ? el('div', {class:'mb-12'}, [
+          el('div', {class:'mx-auto max-w-4xl text-center mb-8'}, [
+            el('h3', {class:'text-2xl font-bold tracking-tight sm:text-3xl'}, [txt('🖼️ Conheça a Interface do SmartPM')])
+          ]),
+          el('div', {class:'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'}, (C.tmxsmartpm.screenshots||[]).map((screenshot, idx) => 
+            el('div', {class:'group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:-translate-y-1 hover:shadow-xl'}, [
+              el('div', {class:'aspect-[16/10] w-full overflow-hidden'}, [
+                el('img', {src: screenshot.src, alt: screenshot.titulo, class:'h-full w-full object-cover transition-transform group-hover:scale-105', 'data-screenshot-index': String(idx), onclick: (e)=>openScreenshotLightbox(parseInt(e.currentTarget.getAttribute('data-screenshot-index')))})
+              ]),
+              el('div', {class:'p-4'}, [
+                el('h4', {class:'text-base font-semibold mb-1'}, [txt(screenshot.titulo)]),
+                el('p', {class:'text-xs text-blue-100'}, [txt(screenshot.descricao)])
+              ])
+            ])
+          ))
+        ]) : null,
         // Imagem e CTAs
         el('div', {class:'grid grid-cols-1 items-center gap-10 lg:grid-cols-2'}, [
           el('div', {}, [ 
@@ -372,6 +426,41 @@
       document.getElementById('lightbox-desc').textContent = desc;
     }
     document.addEventListener('keydown', (e)=>{ if(overlay.style.display==='flex'){ if(e.key==='Escape') closeLightbox(); if(e.key==='ArrowRight') navigate(1); if(e.key==='ArrowLeft') navigate(-1);} });
+
+    // Screenshot Lightbox (for SmartPM screenshots)
+    let currentScreenshotIndex = 0;
+    const screenshotOverlay = el('div', {class:'fixed inset-0 z-[60] hidden items-center justify-center bg-black/90 p-4'}, [
+      el('button', {class:'absolute top-4 right-4 rounded-lg bg-white/10 p-2 hover:bg-white/20', onclick: closeScreenshotLightbox}, [el('i', {'data-lucide':'x', class:'w-6 h-6 text-white'})]),
+      el('button', {class:'absolute left-4 top-1/2 -translate-y-1/2 rounded-lg bg-white/10 p-3 hover:bg-white/20', onclick: ()=>navigateScreenshot(-1)}, [el('i', {'data-lucide':'chevron-left', class:'w-6 h-6 text-white'})]),
+      el('div', {class:'text-center max-w-6xl'}, [
+        el('img', {id:'screenshot-lightbox-img', class:'max-h-[75vh] max-w-[90vw] rounded-xl shadow-2xl mx-auto mb-4'}),
+        el('h3', {id:'screenshot-lightbox-title', class:'text-white text-xl font-bold mb-2'}, [txt('')]),
+        el('p', {id:'screenshot-lightbox-desc', class:'text-blue-100 text-base'}, [txt('')])
+      ]),
+      el('button', {class:'absolute right-4 top-1/2 -translate-y-1/2 rounded-lg bg-white/10 p-3 hover:bg-white/20', onclick: ()=>navigateScreenshot(1)}, [el('i', {'data-lucide':'chevron-right', class:'w-6 h-6 text-white'})])
+    ]);
+    document.body.appendChild(screenshotOverlay);
+    const screenshots = C.tmxsmartpm?.screenshots || [];
+    function openScreenshotLightbox(i){ 
+      currentScreenshotIndex = i; 
+      const screenshot = screenshots[currentScreenshotIndex];
+      document.getElementById('screenshot-lightbox-img').src = screenshot.src; 
+      document.getElementById('screenshot-lightbox-title').textContent = screenshot.titulo;
+      document.getElementById('screenshot-lightbox-desc').textContent = screenshot.descricao;
+      screenshotOverlay.style.display='flex'; 
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }
+    function closeScreenshotLightbox(){ screenshotOverlay.style.display='none'; }
+    function navigateScreenshot(step){ 
+      currentScreenshotIndex = (currentScreenshotIndex + step + screenshots.length) % screenshots.length; 
+      const screenshot = screenshots[currentScreenshotIndex];
+      document.getElementById('screenshot-lightbox-img').src = screenshot.src; 
+      document.getElementById('screenshot-lightbox-title').textContent = screenshot.titulo;
+      document.getElementById('screenshot-lightbox-desc').textContent = screenshot.descricao;
+    }
+    document.addEventListener('keydown', (e)=>{ if(screenshotOverlay.style.display==='flex'){ if(e.key==='Escape') closeScreenshotLightbox(); if(e.key==='ArrowRight') navigateScreenshot(1); if(e.key==='ArrowLeft') navigateScreenshot(-1);} });
 
     // LIVRO
     if (C.livro?.url) {
