@@ -114,7 +114,41 @@
   "tmxsmartpm": {
     "enabled": true,
     "image": "assets/TMX SmartPM.jpg",
-    "subtitulo": "Software Integrado ao Microsoft Project para criar e atualizar cronogramas utilizando GenAI, com dashboards que simplificam reuniões e status do projeto.",
+    "titulo": "Pré Lançamento TMX Smart PM : SmartPM – O futuro da gestão de cronogramas com IA chegou",
+    "introducao": "O SmartPM é um software inteligente de criação e gestão de cronogramas que une a praticidade da Inteligência Artificial Generativa à robustez do Microsoft Project.\nCrie, analise e gerencie projetos em segundos — de forma simples, visual e conectada.\n\nCom o SmartPM, você digita o escopo do projeto em linguagem natural e a IA transforma automaticamente em um cronograma completo, com tarefas, durações, dependências e marcos.\nE se você já tem um arquivo no Project, o SmartPM é capaz de extrair, analisar, otimizar e devolver o cronograma aprimorado, tudo em poucos cliques.",
+    "destaque": "💡 O que torna o SmartPM único",
+    "features": [
+      {
+        "icon": "🧠",
+        "titulo": "Criação automática de cronogramas com IA Generativa de ponta",
+        "descricao": "Basta descrever seu projeto — a IA entende e gera todo o planejamento."
+      },
+      {
+        "icon": "🔄",
+        "titulo": "Integração total com o Microsoft Project (via COM)",
+        "descricao": "Importação e exportação fluida de cronogramas, sem perda de estrutura."
+      },
+      {
+        "icon": "📊",
+        "titulo": "Visualização em dashboards exclusivos de Business Intelligence",
+        "descricao": "Acompanhe KPIs de prazo, custo, avanço físico e desempenho da equipe em tempo real."
+      },
+      {
+        "icon": "📈",
+        "titulo": "Geração automática de Status Reports",
+        "descricao": "Relatórios inteligentes e personalizáveis, prontos para enviar à diretoria."
+      },
+      {
+        "icon": "⚙️",
+        "titulo": "Gestão flexível: Gantt ou Kanban",
+        "descricao": "Trabalhe com projetos híbridos ou ágeis no mesmo ambiente, escolhendo a visualização ideal."
+      },
+      {
+        "icon": "🚀",
+        "titulo": "Otimização contínua com IA",
+        "descricao": "A IA aprende com seus projetos anteriores e sugere melhorias a cada nova entrega."
+      }
+    ],
     "cta": "Acessar SmartPM",
     "url": "https://www.smartpm.com.br/"
   },
@@ -199,18 +233,32 @@
     // TMX SmartPM - First priority section
     if (C.tmxsmartpm?.enabled) {
       const pm = el('section', {id:'tmxsmartpm', class:'mx-auto max-w-7xl px-6 py-16'}, [
+        // Título principal
+        el('div', {class:'mx-auto max-w-4xl text-center mb-12'}, [
+          el('p', {class:'mb-2 text-sm font-semibold uppercase tracking-widest text-blue-200'}, [txt('Pré Lançamento')]),
+          el('h2', {class:'text-3xl font-bold tracking-tight sm:text-5xl mb-6'}, [txt(C.tmxsmartpm.titulo || 'TMX SmartPM')]),
+          el('div', {class:'space-y-4 text-lg text-blue-100'}, (C.tmxsmartpm.introducao||'').split('\n\n').map(p => el('p', {}, [txt(p)])))
+        ]),
+        // Destaque
+        el('div', {class:'mx-auto max-w-4xl text-center mb-8'}, [
+          el('h3', {class:'text-2xl font-bold tracking-tight sm:text-3xl'}, [txt(C.tmxsmartpm.destaque || '')])
+        ]),
+        // Features grid
+        el('div', {class:'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12'}, (C.tmxsmartpm.features||[]).map(feature => 
+          el('div', {class:'rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm'}, [
+            el('div', {class:'text-4xl mb-3'}, [txt(feature.icon)]),
+            el('h4', {class:'text-lg font-semibold mb-2'}, [txt(feature.titulo)]),
+            el('p', {class:'text-sm text-blue-100'}, [txt(feature.descricao)])
+          ])
+        )),
+        // Imagem e CTAs
         el('div', {class:'grid grid-cols-1 items-center gap-10 lg:grid-cols-2'}, [
-          el('div', {}, [
-            el('p', {class:'mb-2 text-sm font-semibold uppercase tracking-widest text-blue-200'}, [txt('Software de gestão de cronogramas')]),
-            el('h2', {class:'text-3xl font-bold tracking-tight sm:text-4xl'}, [txt('TMX SmartPM')]),
-            el('p', {class:'mt-3 text-lg text-blue-100'}, [txt(C.tmxsmartpm.subtitulo||'')]),
-            el('div', {class:'mt-6 flex flex-wrap gap-3'}, [
-              el('a', {href:(C.tmxsmartpm.url||'#contato'), target:'_blank', class:'inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-zinc-900 hover:bg-blue-50'}, [txt(C.tmxsmartpm.cta||'Quero Saber Mais')]),
-              el('a', {href:'#contato', class:'inline-flex items-center justify-center rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10'}, [txt('Entre em Contato')])
-            ])
-          ]),
           el('div', {}, [ 
-            el('img', {src: C.tmxsmartpm.image || '', alt: 'TMX SmartPM Screenshot', class:'aspect-[16/10] w-full rounded-2xl border border-white/10 object-cover'}) 
+            el('img', {src: C.tmxsmartpm.image || '', alt: 'TMX SmartPM Screenshot', class:'aspect-[16/10] w-full rounded-2xl border border-white/10 object-cover shadow-soft'}) 
+          ]),
+          el('div', {class:'flex flex-col gap-4'}, [
+            el('a', {href:(C.tmxsmartpm.url||'#contato'), target:'_blank', class:'inline-flex items-center justify-center rounded-xl bg-white px-6 py-4 text-base font-semibold text-zinc-900 hover:bg-blue-50 shadow-soft'}, [txt(C.tmxsmartpm.cta||'Quero Saber Mais')]),
+            el('a', {href:'#contato', class:'inline-flex items-center justify-center rounded-xl border border-white/30 px-6 py-4 text-base font-semibold text-white hover:bg-white/10'}, [txt('Entre em Contato')])
           ])
         ])
       ]);
