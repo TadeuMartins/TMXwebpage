@@ -904,9 +904,6 @@
     document.addEventListener('keydown', (e)=>{ if(screenshotOverlay.style.display==='flex'){ if(e.key==='Escape') closeScreenshotLightbox(); if(e.key==='ArrowRight') navigateScreenshot(1); if(e.key==='ArrowLeft') navigateScreenshot(-1);} });
 
     // LIVRO section hidden
-    // if (C.livro?.url) {
-    //   ...
-    // }
 
     // CONTATO
     const contato = el('section', {id:'contato', class:'mx-auto max-w-7xl px-6 py-16 bg-blue-600 rounded-3xl my-8'}, [
