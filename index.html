@@ -29,9 +29,6 @@
     @media (min-width: 1024px) { .masonry { column-count: 3; } }
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
     .reveal.show { opacity: 1; transform: translateY(0); }
-    .hero-slideshow { position: relative; }
-    .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.8s ease-in-out; }
-    .hero-slide.active { opacity: 1; }
     .gradient-text { background: linear-gradient(135deg, #2563eb, #1d4ed8, #1e40af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .section-divider { height: 1px; background: linear-gradient(to right, transparent, #e5e7eb, transparent); }
     ::selection { background: #2563eb; color: #fff; }
@@ -46,15 +43,10 @@
   "titulo": "TAUON Smart Industry - Project Intelligence",
   "currentLang": "pt",
   "theme": {
-    "heroImages": [
-      "assets/Suporte linguas.jpg",
-      "assets/Resource allocation.jpg",
-      "assets/Status report.jpg",
-      "assets/Gantt.jpg"
-    ],
     "overlay": "bg-gradient-to-b from-black/70 via-black/50 to-blue-950/70",
     "accent": "text-blue-400"
   },
+  "youtubeVideoId": "NeYPgKiglOY",
   "languages": {
     "pt": "Português",
     "en": "English",
@@ -277,48 +269,10 @@
     }
   ],
   "galeria": {
-    "imagens": [
-      {
-        "src": "assets/Screenshot 2025-08-17 154055.png",
-        "descricao": "Palestras sobre tecnologia e inovação."
-      },
-      {
-        "src": "assets/WhatsApp Image 2025-08-03 at 17.39.44 (2).jpeg",
-        "descricao": "Palestras sobre liderança na era da tecnologia."
-      },
-      {
-        "src": "assets/WhatsApp Image 2025-08-03 at 17.39.45.jpeg",
-        "descricao": "Palestras sobre liderança na era da tecnologia."
-      },
-      {
-        "src": "assets/WhatsApp Image 2025-08-17 at 15.42.36.jpeg",
-        "descricao": "Lançamento do livro \"A Revolução Silenciosa da IA\" com Fabio Gandour."
-      },
-      {
-        "src": "assets/WhatsApp Image 2025-08-17 at 15.42.56.jpeg",
-        "descricao": "Lançamento do livro \"A Revolução Silenciosa da IA\" com Fabio Gandour."
-      },
-      {
-        "src": "assets/WhatsApp Image 2025-08-17 at 15.47.24 (1).jpeg",
-        "descricao": "Conversa sobre carreiras com alunos da rede publica."
-      },
-      {
-        "src": "assets/WhatsApp Image 2025-08-17 at 15.47.24.jpeg",
-        "descricao": "Conversa sobre carreiras com alunos da rede publica."
-      },
-      {
-        "src": "assets/premio1.jpg",
-        "descricao": "Reconhecimento de projeto Siemens 2025"
-      },
-      {
-        "src": "assets/trofeu.jpg",
-        "descricao": "Projeto de GenAI premiado a nível global."
-      }
-    ]
+    "imagens": []
   },
   "tmxsmartpm": {
     "enabled": true,
-    "image": "assets/TMX SmartPM.jpg",
     "pt": {
       "prelaunch": "Pré Lançamento",
       "titulo": "Pi – TAUON Project Intelligence",
@@ -444,124 +398,10 @@
         }
       ]
     },
-    "screenshots": {
-      "pt": [
-        {
-          "src": "assets/Suporte linguas.jpg",
-          "titulo": "Suporte Multilíngue",
-          "descricao": "Interface disponível em Inglês, Português e Espanhol para equipes globais."
-        },
-        {
-          "src": "assets/Resource allocation.jpg",
-          "titulo": "Análise de Performance por Recursos",
-          "descricao": "Dashboard de BI exclusivo com visão detalhada da alocação e performance de recursos."
-        },
-        {
-          "src": "assets/Status report.jpg",
-          "titulo": "Status Report Automático",
-          "descricao": "Relatórios executivos gerados automaticamente, prontos para apresentação."
-        },
-        {
-          "src": "assets/Gantt.jpg",
-          "titulo": "Visualização Gantt Online",
-          "descricao": "Edite e visualize cronogramas em formato Gantt diretamente no navegador."
-        },
-        {
-          "src": "assets/Cards Kanban.jpg",
-          "titulo": "Gestão por Kanban",
-          "descricao": "Visualize e gerencie projetos híbridos e ágeis através de cards Kanban."
-        },
-        {
-          "src": "assets/Salvar TMX ou Enviar extrair do MS PRoject.jpg",
-          "titulo": "Integração com MS Project",
-          "descricao": "Salve projetos no formato .TMX ou sincronize diretamente com MS Project (.mpp)."
-        },
-        {
-          "src": "assets/Agente de IA.jpg",
-          "titulo": "Agente de IA Inteligente",
-          "descricao": "Assistente de IA exclusivo para criar, modificar e analisar gaps do projeto."
-        }
-      ],
-      "en": [
-        {
-          "src": "assets/Suporte linguas.jpg",
-          "titulo": "Multilingual Support",
-          "descricao": "Interface available in English, Portuguese and Spanish for global teams."
-        },
-        {
-          "src": "assets/Resource allocation.jpg",
-          "titulo": "Resource Performance Analysis",
-          "descricao": "Exclusive BI dashboard with detailed view of resource allocation and performance."
-        },
-        {
-          "src": "assets/Status report.jpg",
-          "titulo": "Automatic Status Report",
-          "descricao": "Executive reports generated automatically, ready for presentation."
-        },
-        {
-          "src": "assets/Gantt.jpg",
-          "titulo": "Online Gantt Visualization",
-          "descricao": "Edit and view schedules in Gantt format directly in the browser."
-        },
-        {
-          "src": "assets/Cards Kanban.jpg",
-          "titulo": "Kanban Management",
-          "descricao": "Visualize and manage hybrid and agile projects through Kanban cards."
-        },
-        {
-          "src": "assets/Salvar TMX ou Enviar extrair do MS PRoject.jpg",
-          "titulo": "MS Project Integration",
-          "descricao": "Save projects in .TMX format or sync directly with MS Project (.mpp)."
-        },
-        {
-          "src": "assets/Agente de IA.jpg",
-          "titulo": "Intelligent AI Agent",
-          "descricao": "Exclusive AI assistant to create, modify and analyze project gaps."
-        }
-      ],
-      "es": [
-        {
-          "src": "assets/Suporte linguas.jpg",
-          "titulo": "Soporte Multilingüe",
-          "descricao": "Interfaz disponible en Inglés, Portugués y Español para equipos globales."
-        },
-        {
-          "src": "assets/Resource allocation.jpg",
-          "titulo": "Análisis de Rendimiento por Recursos",
-          "descricao": "Dashboard de BI exclusivo con vista detallada de la asignación y rendimiento de recursos."
-        },
-        {
-          "src": "assets/Status report.jpg",
-          "titulo": "Status Report Automático",
-          "descricao": "Informes ejecutivos generados automáticamente, listos para presentación."
-        },
-        {
-          "src": "assets/Gantt.jpg",
-          "titulo": "Visualización Gantt Online",
-          "descricao": "Edite y visualice cronogramas en formato Gantt directamente en el navegador."
-        },
-        {
-          "src": "assets/Cards Kanban.jpg",
-          "titulo": "Gestión por Kanban",
-          "descricao": "Visualice y gestione proyectos híbridos y ágiles a través de tarjetas Kanban."
-        },
-        {
-          "src": "assets/Salvar TMX ou Enviar extrair do MS PRoject.jpg",
-          "titulo": "Integración con MS Project",
-          "descricao": "Guarde proyectos en formato .TMX o sincronice directamente con MS Project (.mpp)."
-        },
-        {
-          "src": "assets/Agente de IA.jpg",
-          "titulo": "Agente de IA Inteligente",
-          "descricao": "Asistente de IA exclusivo para crear, modificar y analizar brechas del proyecto."
-        }
-      ]
-    },
     "url": "https://www.smartpm.com.br/"
   },
   "livro": {
     "titulo": "Além do Algoritmo — A Revolução Silenciosa da IA",
-    "image": "assets/capa-livro.jpeg",
     "url": "https://www.amazon.com.br/Ale%CC%81m-Algoritmo-Revoluc%CC%A7a%CC%83o-Silenciosa-IA-ebook/dp/B0D36B132X"
   },
   "linkedin": {
@@ -646,19 +486,9 @@
     );
     root.appendChild(navbar);
 
-    // HERO with slideshow
-    const heroImages = C.theme?.heroImages || [];
+    // HERO (gradient background, no images)
     const hero = el('section', {id:'home', class:'relative h-[85vh] min-h-[560px] w-full overflow-hidden'},[
-      // Slideshow container
-      el('div', {class:'hero-slideshow absolute inset-0'}, 
-        heroImages.map((img, idx) => 
-          el('img', {
-            src: img, 
-            alt: 'TAUON Screenshot ' + (idx + 1), 
-            class: `hero-slide h-full w-full object-cover ${idx === 0 ? 'active' : ''}`
-          })
-        )
-      ),
+      el('div', {class:'absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900'}),
       el('div', {class:'absolute inset-0 bg-gradient-to-b from-gray-900/80 via-blue-900/60 to-gray-900/90'}),
       el('div', {class:'relative z-10 mx-auto flex h-full max-w-7xl items-center px-6'}, [
         el('div', {class:'max-w-2xl'}, [
@@ -680,17 +510,6 @@
       ])
     ]);
     root.appendChild(hero);
-
-    // Start hero slideshow
-    if (heroImages.length > 1) {
-      let currentSlide = 0;
-      setInterval(() => {
-        const slides = document.querySelectorAll('.hero-slide');
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-      }, 4000);
-    }
 
     // TAUON - First priority section
     if (C.tmxsmartpm?.enabled) {
@@ -730,32 +549,27 @@
             el('p', {class:'text-sm text-gray-600 leading-relaxed'}, [txt(feature.descricao)])
           ])
         )),
-        // Screenshots Gallery
-        (t(C.tmxsmartpm.screenshots) && t(C.tmxsmartpm.screenshots).length > 0) ? el('div', {class:'mb-16'}, [
+        // YouTube Video
+        C.youtubeVideoId && /^[\w-]+$/.test(C.youtubeVideoId) ? el('div', {class:'mb-16'}, [
           el('div', {class:'mx-auto max-w-4xl text-center mb-10'}, [
             el('h3', {class:'text-2xl font-bold tracking-tight sm:text-3xl text-gray-900'}, [txt(t(C.ui).screenshotsTitle)])
           ]),
-          el('div', {class:'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'}, (t(C.tmxsmartpm.screenshots)||[]).map((screenshot, idx) => 
-            el('div', {class:'group relative overflow-hidden rounded-2xl border border-gray-200/80 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer'}, [
-              el('div', {class:'aspect-[16/10] w-full overflow-hidden'}, [
-                el('img', {src: screenshot.src, alt: screenshot.titulo, class:'h-full w-full object-cover transition-transform group-hover:scale-105', 'data-screenshot-index': String(idx), onclick: (e)=>openScreenshotLightbox(parseInt(e.currentTarget.getAttribute('data-screenshot-index')))})
-              ]),
-              el('div', {class:'p-5'}, [
-                el('h4', {class:'text-base font-bold mb-1.5 text-gray-900'}, [txt(screenshot.titulo)]),
-                el('p', {class:'text-xs text-gray-500 leading-relaxed'}, [txt(screenshot.descricao)])
-              ])
+          el('div', {class:'mx-auto max-w-4xl'}, [
+            el('div', {class:'relative w-full overflow-hidden rounded-2xl border border-gray-200/80 shadow-card', style:'padding-top:56.25%'}, [
+              el('iframe', {
+                src: 'https://www.youtube.com/embed/' + C.youtubeVideoId + '?rel=0',
+                title: 'TAUON Project Intelligence',
+                class: 'absolute inset-0 w-full h-full border-0',
+                allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
+                allowfullscreen: 'true'
+              })
             ])
-          ))
-        ]) : null,
-        // Imagem e CTAs
-        el('div', {class:'grid grid-cols-1 items-center gap-12 lg:grid-cols-2'}, [
-          el('div', {}, [ 
-            el('img', {src: C.tmxsmartpm.image || '', alt: 'TAUON Project Intelligence Screenshot', class:'aspect-[16/10] w-full rounded-2xl border border-gray-200/80 object-cover shadow-card'}) 
-          ]),
-          el('div', {class:'flex flex-col gap-5'}, [
-            el('a', {href:(C.tmxsmartpm.url||'#contato'), target:'_blank', class:'inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4 text-base font-semibold text-white hover:from-blue-700 hover:to-blue-800 shadow-md shadow-blue-600/20 hover:shadow-lg transition-all'}, [txt(t(C.ui).accessSmartPM)]),
-            el('a', {href:'#contato', class:'inline-flex items-center justify-center rounded-xl border border-gray-300 px-6 py-4 text-base font-semibold text-gray-700 hover:bg-gray-50 transition-all'}, [txt(t(C.tmxsmartpm).cta_contact)])
           ])
+        ]) : null,
+        // CTAs
+        el('div', {class:'mx-auto max-w-md flex flex-col gap-5'}, [
+          el('a', {href:(C.tmxsmartpm.url||'#contato'), target:'_blank', class:'inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4 text-base font-semibold text-white hover:from-blue-700 hover:to-blue-800 shadow-md shadow-blue-600/20 hover:shadow-lg transition-all'}, [txt(t(C.ui).accessSmartPM)]),
+          el('a', {href:'#contato', class:'inline-flex items-center justify-center rounded-xl border border-gray-300 px-6 py-4 text-base font-semibold text-gray-700 hover:bg-gray-50 transition-all'}, [txt(t(C.tmxsmartpm).cta_contact)])
         ])
       ]);
       root.appendChild(pm);
@@ -816,8 +630,7 @@
       root.appendChild(historia);
     }
 
-    // SOBRE (ARTIGOS + GALERIA) - Tabbed section (without personal curriculum)
-    const imgs = C.galeria?.imagens || [];
+    // SOBRE (ARTIGOS) - Tabbed section
     // Section divider
     root.appendChild(el('div', {class:'section-divider mx-auto max-w-5xl my-4'}));
     const sobre = el('section', {id:'sobre', class:'mx-auto max-w-7xl px-6 py-20 bg-gray-50/80 rounded-3xl my-8'}, [
@@ -863,73 +676,6 @@
         }
       }
     }
-
-    // Lightbox (needed for gallery tab)
-    let currentIndex = 0;
-    const overlay = el('div', {class:'fixed inset-0 z-[60] hidden items-center justify-center bg-black/90 p-4'}, [
-      el('button', {class:'absolute top-4 right-4 rounded-lg bg-white/10 p-2 hover:bg-white/20', onclick: closeLightbox}, [el('i', {'data-lucide':'x', class:'w-6 h-6 text-white'})]),
-      el('button', {class:'absolute left-4 top-1/2 -translate-y-1/2 rounded-lg bg-white/10 p-3 hover:bg-white/20', onclick: ()=>navigate(-1)}, [el('i', {'data-lucide':'chevron-left', class:'w-6 h-6 text-white'})]),
-      el('div', {class:'text-center max-w-4xl'}, [
-        el('img', {id:'lightbox-img', class:'max-h-[75vh] max-w-[90vw] rounded-xl shadow-2xl mx-auto mb-4'}),
-        el('p', {id:'lightbox-desc', class:'text-white text-lg'}, [txt('')])
-      ]),
-      el('button', {class:'absolute right-4 top-1/2 -translate-y-1/2 rounded-lg bg-white/10 p-3 hover:bg-white/20', onclick: ()=>navigate(1)}, [el('i', {'data-lucide':'chevron-right', class:'w-6 h-6 text-white'})])
-    ]);
-    document.body.appendChild(overlay);
-    function openLightbox(i){ 
-      currentIndex = i; 
-      const img = imgs[currentIndex];
-      const src = typeof img === 'string' ? img : img.src;
-      const desc = typeof img === 'string' ? `${t(C.ui).photo} ${i+1}` : img.descricao;
-      document.getElementById('lightbox-img').src = src; 
-      document.getElementById('lightbox-desc').textContent = desc;
-      overlay.style.display='flex'; 
-    }
-    function closeLightbox(){ overlay.style.display='none'; }
-    function navigate(step){ 
-      currentIndex = (currentIndex + step + imgs.length) % imgs.length; 
-      const img = imgs[currentIndex];
-      const src = typeof img === 'string' ? img : img.src;
-      const desc = typeof img === 'string' ? `${t(C.ui).photo} ${currentIndex+1}` : img.descricao;
-      document.getElementById('lightbox-img').src = src; 
-      document.getElementById('lightbox-desc').textContent = desc;
-    }
-    document.addEventListener('keydown', (e)=>{ if(overlay.style.display==='flex'){ if(e.key==='Escape') closeLightbox(); if(e.key==='ArrowRight') navigate(1); if(e.key==='ArrowLeft') navigate(-1);} });
-
-    // Screenshot Lightbox (for SmartPM screenshots)
-    let currentScreenshotIndex = 0;
-    const screenshotOverlay = el('div', {class:'fixed inset-0 z-[60] hidden items-center justify-center bg-black/90 p-4'}, [
-      el('button', {class:'absolute top-4 right-4 rounded-lg bg-white/10 p-2 hover:bg-white/20', onclick: closeScreenshotLightbox}, [el('i', {'data-lucide':'x', class:'w-6 h-6 text-white'})]),
-      el('button', {class:'absolute left-4 top-1/2 -translate-y-1/2 rounded-lg bg-white/10 p-3 hover:bg-white/20', onclick: ()=>navigateScreenshot(-1)}, [el('i', {'data-lucide':'chevron-left', class:'w-6 h-6 text-white'})]),
-      el('div', {class:'text-center max-w-6xl'}, [
-        el('img', {id:'screenshot-lightbox-img', class:'max-h-[75vh] max-w-[90vw] rounded-xl shadow-2xl mx-auto mb-4'}),
-        el('h3', {id:'screenshot-lightbox-title', class:'text-white text-xl font-bold mb-2'}, [txt('')]),
-        el('p', {id:'screenshot-lightbox-desc', class:'text-blue-100 text-base'}, [txt('')])
-      ]),
-      el('button', {class:'absolute right-4 top-1/2 -translate-y-1/2 rounded-lg bg-white/10 p-3 hover:bg-white/20', onclick: ()=>navigateScreenshot(1)}, [el('i', {'data-lucide':'chevron-right', class:'w-6 h-6 text-white'})])
-    ]);
-    document.body.appendChild(screenshotOverlay);
-    const screenshots = t(C.tmxsmartpm?.screenshots) || [];
-    function openScreenshotLightbox(i){ 
-      currentScreenshotIndex = i; 
-      const screenshot = screenshots[currentScreenshotIndex];
-      document.getElementById('screenshot-lightbox-img').src = screenshot.src; 
-      document.getElementById('screenshot-lightbox-title').textContent = screenshot.titulo;
-      document.getElementById('screenshot-lightbox-desc').textContent = screenshot.descricao;
-      screenshotOverlay.style.display='flex'; 
-      if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-      }
-    }
-    function closeScreenshotLightbox(){ screenshotOverlay.style.display='none'; }
-    function navigateScreenshot(step){ 
-      currentScreenshotIndex = (currentScreenshotIndex + step + screenshots.length) % screenshots.length; 
-      const screenshot = screenshots[currentScreenshotIndex];
-      document.getElementById('screenshot-lightbox-img').src = screenshot.src; 
-      document.getElementById('screenshot-lightbox-title').textContent = screenshot.titulo;
-      document.getElementById('screenshot-lightbox-desc').textContent = screenshot.descricao;
-    }
-    document.addEventListener('keydown', (e)=>{ if(screenshotOverlay.style.display==='flex'){ if(e.key==='Escape') closeScreenshotLightbox(); if(e.key==='ArrowRight') navigateScreenshot(1); if(e.key==='ArrowLeft') navigateScreenshot(-1);} });
 
     // LIVRO section hidden
 
