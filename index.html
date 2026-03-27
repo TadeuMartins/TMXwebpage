@@ -5,22 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TAUON Smart Industry - Project Intelligence</title>
   <meta name="description" content="TAUON Smart Industry - Gestão Inteligente de Projetos Industriais. Conheça o Pi - TAUON Project Intelligence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
     html { scroll-behavior: smooth; }
-    .shadow-soft { box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+    body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .shadow-soft { box-shadow: 0 10px 40px rgba(0,0,0,.12); }
+    .shadow-card { box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.08); }
     .masonry { column-gap: 1rem; }
     @media (min-width: 640px) { .masonry { column-count: 2; } }
     @media (min-width: 1024px) { .masonry { column-count: 3; } }
-    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
     .reveal.show { opacity: 1; transform: translateY(0); }
-    .hero-slideshow { position: relative; }
-    .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.5s ease-in-out; }
-    .hero-slide.active { opacity: 1; }
+    .gradient-text { background: linear-gradient(135deg, #2563eb, #1d4ed8, #1e40af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .section-divider { height: 1px; background: linear-gradient(to right, transparent, #e5e7eb, transparent); }
+    ::selection { background: #2563eb; color: #fff; }
+    a { transition: color .2s ease, transform .2s ease; }
   </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-white text-gray-800 antialiased">
   <div id="root"></div>
 
   <!-- ====== CONTEÚDO EDITÁVEL (JSON) ====== -->
@@ -28,15 +43,10 @@
   "titulo": "TAUON Smart Industry - Project Intelligence",
   "currentLang": "pt",
   "theme": {
-    "heroImages": [
-      "assets/Suporte linguas.jpg",
-      "assets/Resource allocation.jpg",
-      "assets/Status report.jpg",
-      "assets/Gantt.jpg"
-    ],
     "overlay": "bg-gradient-to-b from-black/70 via-black/50 to-blue-950/70",
     "accent": "text-blue-400"
   },
+  "youtubeVideoId": "NeYPgKiglOY",
   "languages": {
     "pt": "Português",
     "en": "English",
@@ -192,40 +202,40 @@
     "pt": {
       "titulo": "Nossa História",
       "subtitulo": "A origem da TAUON Smart Industry",
-      "texto": "A TAUON Smart Industry foi fundada por três especialistas do setor industrial — Tadeu, Adriano e Stefam — unidos por uma missão clara: transformar a gestão de projetos industriais no Brasil e no mundo.\n\nCom décadas de atuação combinadas em gestão de projetos de capital, manutenção industrial, tecnologia e inteligência artificial, os fundadores vivenciaram de perto os desafios críticos do setor. A constatação era alarmante: mais de 70% dos projetos industriais não atingem seus objetivos de prazo, custo ou escopo.\n\nEssa realidade motivou a criação da TAUON. A empresa nasceu com o propósito de redefinir os padrões de gestão de projetos por meio de tecnologia avançada e metodologias colaborativas comprovadas. Nossa abordagem elimina as barreiras que historicamente impedem o sucesso na execução de projetos industriais.\n\nO Pi (Project Intelligence) — TAUON Project Intelligence — é nossa primeira solução e materializa o compromisso da empresa: entregar ferramentas que geram impacto real no dia a dia de gerentes de projetos e equipes de manutenção.",
+      "texto": "A TAUON Smart Industry foi fundada por três especialistas do setor industrial — Tadeu, Adriano e Sérgio — unidos por uma missão clara: transformar a gestão de projetos industriais no Brasil e no mundo.\n\nCom décadas de atuação combinadas em gestão de projetos de capital, manutenção industrial, tecnologia e inteligência artificial, os fundadores vivenciaram de perto os desafios críticos do setor. A constatação era alarmante: mais de 70% dos projetos industriais não atingem seus objetivos de prazo, custo ou escopo.\n\nEssa realidade motivou a criação da TAUON. A empresa nasceu com o propósito de redefinir os padrões de gestão de projetos por meio de tecnologia avançada e metodologias colaborativas comprovadas. Nossa abordagem elimina as barreiras que historicamente impedem o sucesso na execução de projetos industriais.\n\nO Pi (Project Intelligence) — TAUON Project Intelligence — é nossa primeira solução e materializa o compromisso da empresa: entregar ferramentas que geram impacto real no dia a dia de gerentes de projetos e equipes de manutenção.",
       "missao_titulo": "Nossa Missão",
       "missao": "Transformar a gestão de projetos industriais por meio de tecnologia inteligente e metodologias colaborativas, tornando o sucesso a regra, não a exceção.",
       "fundadores_titulo": "Nossos Fundadores",
       "fundadores": [
         {"nome": "Tadeu Martins", "linkedin": "https://www.linkedin.com/in/tadeu-martins-pmp-tecnologia-industria-engenharia-transformacao-digital-projetos-gestao-inovacao/"},
         {"nome": "Adriano Resende", "linkedin": "https://www.linkedin.com/in/adriano-resende-7b966a163/"},
-        {"nome": "Stefam Prestes", "linkedin": "https://www.linkedin.com/in/stefamprestes/"}
+        {"nome": "Sérgio Souza", "linkedin": "https://www.linkedin.com/in/sergiosoud/"}
       ]
     },
     "en": {
       "titulo": "Our History",
       "subtitulo": "The origin of TAUON Smart Industry",
-      "texto": "TAUON Smart Industry was founded by three specialists from the industrial sector — Tadeu, Adriano, and Stefam — united by a clear mission: to transform industrial project management in Brazil and worldwide.\n\nWith combined decades of experience in capital project management, industrial maintenance, technology, and artificial intelligence, the founders witnessed firsthand the critical challenges of the sector. The finding was alarming: more than 70% of industrial projects fail to meet their schedule, cost, or scope objectives.\n\nThis reality motivated the creation of TAUON. The company was born with the purpose of redefining project management standards through advanced technology and proven collaborative methodologies. Our approach eliminates the barriers that have historically prevented success in industrial project execution.\n\nPi (Project Intelligence) — TAUON Project Intelligence — is our first solution and embodies the company's commitment: delivering tools that generate real impact in the daily lives of project managers and maintenance teams.",
+      "texto": "TAUON Smart Industry was founded by three specialists from the industrial sector — Tadeu, Adriano, and Sérgio — united by a clear mission: to transform industrial project management in Brazil and worldwide.\n\nWith combined decades of experience in capital project management, industrial maintenance, technology, and artificial intelligence, the founders witnessed firsthand the critical challenges of the sector. The finding was alarming: more than 70% of industrial projects fail to meet their schedule, cost, or scope objectives.\n\nThis reality motivated the creation of TAUON. The company was born with the purpose of redefining project management standards through advanced technology and proven collaborative methodologies. Our approach eliminates the barriers that have historically prevented success in industrial project execution.\n\nPi (Project Intelligence) — TAUON Project Intelligence — is our first solution and embodies the company's commitment: delivering tools that generate real impact in the daily lives of project managers and maintenance teams.",
       "missao_titulo": "Our Mission",
       "missao": "Transform industrial project management through intelligent technology and collaborative methodologies, making success the rule, not the exception.",
       "fundadores_titulo": "Our Founders",
       "fundadores": [
         {"nome": "Tadeu Martins", "linkedin": "https://www.linkedin.com/in/tadeu-martins-pmp-tecnologia-industria-engenharia-transformacao-digital-projetos-gestao-inovacao/"},
         {"nome": "Adriano Resende", "linkedin": "https://www.linkedin.com/in/adriano-resende-7b966a163/"},
-        {"nome": "Stefam Prestes", "linkedin": "https://www.linkedin.com/in/stefamprestes/"}
+        {"nome": "Sérgio Souza", "linkedin": "https://www.linkedin.com/in/sergiosoud/"}
       ]
     },
     "es": {
       "titulo": "Nuestra Historia",
       "subtitulo": "El origen de TAUON Smart Industry",
-      "texto": "TAUON Smart Industry fue fundada por tres especialistas del sector industrial — Tadeu, Adriano y Stefam — unidos por una misión clara: transformar la gestión de proyectos industriales en Brasil y en el mundo.\n\nCon décadas de actuación combinadas en gestión de proyectos de capital, mantenimiento industrial, tecnología e inteligencia artificial, los fundadores vivenciaron de cerca los desafíos críticos del sector. La constatación era alarmante: más del 70% de los proyectos industriales no alcanzan sus objetivos de plazo, costo o alcance.\n\nEsta realidad motivó la creación de TAUON. La empresa nació con el propósito de redefinir los estándares de gestión de proyectos por medio de tecnología avanzada y metodologías colaborativas comprobadas. Nuestro enfoque elimina las barreras que históricamente impiden el éxito en la ejecución de proyectos industriales.\n\nPi (Project Intelligence) — TAUON Project Intelligence — es nuestra primera solución y materializa el compromiso de la empresa: entregar herramientas que generan impacto real en el día a día de gerentes de proyectos y equipos de mantenimiento.",
+      "texto": "TAUON Smart Industry fue fundada por tres especialistas del sector industrial — Tadeu, Adriano y Sérgio — unidos por una misión clara: transformar la gestión de proyectos industriales en Brasil y en el mundo.\n\nCon décadas de actuación combinadas en gestión de proyectos de capital, mantenimiento industrial, tecnología e inteligencia artificial, los fundadores vivenciaron de cerca los desafíos críticos del sector. La constatación era alarmante: más del 70% de los proyectos industriales no alcanzan sus objetivos de plazo, costo o alcance.\n\nEsta realidad motivó la creación de TAUON. La empresa nació con el propósito de redefinir los estándares de gestión de proyectos por medio de tecnología avanzada y metodologías colaborativas comprobadas. Nuestro enfoque elimina las barreras que históricamente impiden el éxito en la ejecución de proyectos industriales.\n\nPi (Project Intelligence) — TAUON Project Intelligence — es nuestra primera solución y materializa el compromiso de la empresa: entregar herramientas que generan impacto real en el día a día de gerentes de proyectos y equipos de mantenimiento.",
       "missao_titulo": "Nuestra Misión",
       "missao": "Transformar la gestión de proyectos industriales por medio de tecnología inteligente y metodologías colaborativas, haciendo del éxito la regla, no la excepción.",
       "fundadores_titulo": "Nuestros Fundadores",
       "fundadores": [
         {"nome": "Tadeu Martins", "linkedin": "https://www.linkedin.com/in/tadeu-martins-pmp-tecnologia-industria-engenharia-transformacao-digital-projetos-gestao-inovacao/"},
         {"nome": "Adriano Resende", "linkedin": "https://www.linkedin.com/in/adriano-resende-7b966a163/"},
-        {"nome": "Stefam Prestes", "linkedin": "https://www.linkedin.com/in/stefamprestes/"}
+        {"nome": "Sérgio Souza", "linkedin": "https://www.linkedin.com/in/sergiosoud/"}
       ]
     }
   },
@@ -259,48 +269,10 @@
     }
   ],
   "galeria": {
-    "imagens": [
-      {
-        "src": "assets/Screenshot 2025-08-17 154055.png",
-        "descricao": "Palestras sobre tecnologia e inovação."
-      },
-      {
-        "src": "assets/WhatsApp Image 2025-08-03 at 17.39.44 (2).jpeg",
-        "descricao": "Palestras sobre liderança na era da tecnologia."
-      },
-      {
-        "src": "assets/WhatsApp Image 2025-08-03 at 17.39.45.jpeg",
-        "descricao": "Palestras sobre liderança na era da tecnologia."
-      },
-      {
-        "src": "assets/WhatsApp Image 2025-08-17 at 15.42.36.jpeg",
-        "descricao": "Lançamento do livro \"A Revolução Silenciosa da IA\" com Fabio Gandour."
-      },
-      {
-        "src": "assets/WhatsApp Image 2025-08-17 at 15.42.56.jpeg",
-        "descricao": "Lançamento do livro \"A Revolução Silenciosa da IA\" com Fabio Gandour."
-      },
-      {
-        "src": "assets/WhatsApp Image 2025-08-17 at 15.47.24 (1).jpeg",
-        "descricao": "Conversa sobre carreiras com alunos da rede publica."
-      },
-      {
-        "src": "assets/WhatsApp Image 2025-08-17 at 15.47.24.jpeg",
-        "descricao": "Conversa sobre carreiras com alunos da rede publica."
-      },
-      {
-        "src": "assets/premio1.jpg",
-        "descricao": "Reconhecimento de projeto Siemens 2025"
-      },
-      {
-        "src": "assets/trofeu.jpg",
-        "descricao": "Projeto de GenAI premiado a nível global."
-      }
-    ]
+    "imagens": []
   },
   "tmxsmartpm": {
     "enabled": true,
-    "image": "assets/TMX SmartPM.jpg",
     "pt": {
       "prelaunch": "Pré Lançamento",
       "titulo": "Pi – TAUON Project Intelligence",
@@ -426,124 +398,10 @@
         }
       ]
     },
-    "screenshots": {
-      "pt": [
-        {
-          "src": "assets/Suporte linguas.jpg",
-          "titulo": "Suporte Multilíngue",
-          "descricao": "Interface disponível em Inglês, Português e Espanhol para equipes globais."
-        },
-        {
-          "src": "assets/Resource allocation.jpg",
-          "titulo": "Análise de Performance por Recursos",
-          "descricao": "Dashboard de BI exclusivo com visão detalhada da alocação e performance de recursos."
-        },
-        {
-          "src": "assets/Status report.jpg",
-          "titulo": "Status Report Automático",
-          "descricao": "Relatórios executivos gerados automaticamente, prontos para apresentação."
-        },
-        {
-          "src": "assets/Gantt.jpg",
-          "titulo": "Visualização Gantt Online",
-          "descricao": "Edite e visualize cronogramas em formato Gantt diretamente no navegador."
-        },
-        {
-          "src": "assets/Cards Kanban.jpg",
-          "titulo": "Gestão por Kanban",
-          "descricao": "Visualize e gerencie projetos híbridos e ágeis através de cards Kanban."
-        },
-        {
-          "src": "assets/Salvar TMX ou Enviar extrair do MS PRoject.jpg",
-          "titulo": "Integração com MS Project",
-          "descricao": "Salve projetos no formato .TMX ou sincronize diretamente com MS Project (.mpp)."
-        },
-        {
-          "src": "assets/Agente de IA.jpg",
-          "titulo": "Agente de IA Inteligente",
-          "descricao": "Assistente de IA exclusivo para criar, modificar e analisar gaps do projeto."
-        }
-      ],
-      "en": [
-        {
-          "src": "assets/Suporte linguas.jpg",
-          "titulo": "Multilingual Support",
-          "descricao": "Interface available in English, Portuguese and Spanish for global teams."
-        },
-        {
-          "src": "assets/Resource allocation.jpg",
-          "titulo": "Resource Performance Analysis",
-          "descricao": "Exclusive BI dashboard with detailed view of resource allocation and performance."
-        },
-        {
-          "src": "assets/Status report.jpg",
-          "titulo": "Automatic Status Report",
-          "descricao": "Executive reports generated automatically, ready for presentation."
-        },
-        {
-          "src": "assets/Gantt.jpg",
-          "titulo": "Online Gantt Visualization",
-          "descricao": "Edit and view schedules in Gantt format directly in the browser."
-        },
-        {
-          "src": "assets/Cards Kanban.jpg",
-          "titulo": "Kanban Management",
-          "descricao": "Visualize and manage hybrid and agile projects through Kanban cards."
-        },
-        {
-          "src": "assets/Salvar TMX ou Enviar extrair do MS PRoject.jpg",
-          "titulo": "MS Project Integration",
-          "descricao": "Save projects in .TMX format or sync directly with MS Project (.mpp)."
-        },
-        {
-          "src": "assets/Agente de IA.jpg",
-          "titulo": "Intelligent AI Agent",
-          "descricao": "Exclusive AI assistant to create, modify and analyze project gaps."
-        }
-      ],
-      "es": [
-        {
-          "src": "assets/Suporte linguas.jpg",
-          "titulo": "Soporte Multilingüe",
-          "descricao": "Interfaz disponible en Inglés, Portugués y Español para equipos globales."
-        },
-        {
-          "src": "assets/Resource allocation.jpg",
-          "titulo": "Análisis de Rendimiento por Recursos",
-          "descricao": "Dashboard de BI exclusivo con vista detallada de la asignación y rendimiento de recursos."
-        },
-        {
-          "src": "assets/Status report.jpg",
-          "titulo": "Status Report Automático",
-          "descricao": "Informes ejecutivos generados automáticamente, listos para presentación."
-        },
-        {
-          "src": "assets/Gantt.jpg",
-          "titulo": "Visualización Gantt Online",
-          "descricao": "Edite y visualice cronogramas en formato Gantt directamente en el navegador."
-        },
-        {
-          "src": "assets/Cards Kanban.jpg",
-          "titulo": "Gestión por Kanban",
-          "descricao": "Visualice y gestione proyectos híbridos y ágiles a través de tarjetas Kanban."
-        },
-        {
-          "src": "assets/Salvar TMX ou Enviar extrair do MS PRoject.jpg",
-          "titulo": "Integración con MS Project",
-          "descricao": "Guarde proyectos en formato .TMX o sincronice directamente con MS Project (.mpp)."
-        },
-        {
-          "src": "assets/Agente de IA.jpg",
-          "titulo": "Agente de IA Inteligente",
-          "descricao": "Asistente de IA exclusivo para crear, modificar y analizar brechas del proyecto."
-        }
-      ]
-    },
     "url": "https://www.smartpm.com.br/"
   },
   "livro": {
     "titulo": "Além do Algoritmo — A Revolução Silenciosa da IA",
-    "image": "assets/capa-livro.jpeg",
     "url": "https://www.amazon.com.br/Ale%CC%81m-Algoritmo-Revoluc%CC%A7a%CC%83o-Silenciosa-IA-ebook/dp/B0D36B132X"
   },
   "linkedin": {
@@ -592,61 +450,57 @@
 
     function renderPage() {
     // NAVBAR
-    const navbar = el('header', {class:'fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100'},
+    const navbar = el('header', {class:'fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-xl shadow-[0_1px_0_rgba(0,0,0,.05)] border-b border-gray-100/80'},
       el('div', {class:'mx-auto max-w-7xl px-6'},
-        el('div', {class:'flex items-center justify-between gap-4 py-4'},[
-          el('a', {href:'#home', class:'flex items-center gap-3'}, [
-            el('div', {class:'flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600'}, [el('i', {'data-lucide':'factory', class:'w-5 h-5 text-white'})]),
+        el('div', {class:'flex items-center justify-between gap-4 py-3'},[
+          el('a', {href:'#home', class:'flex items-center gap-3 group'}, [
+            el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 shadow-md shadow-blue-600/20 group-hover:shadow-lg group-hover:shadow-blue-600/30 transition-shadow'}, [el('i', {'data-lucide':'factory', class:'w-5 h-5 text-white'})]),
             el('div', {class:'leading-none'}, [
-              el('p', {class:'text-sm font-semibold tracking-widest text-gray-900'}, [txt(t(C.header).brand || 'TMX SMART INDUSTRY')]),
-              el('p', {class:'-mt-1 text-[11px] uppercase tracking-[0.25em] text-blue-600'}, [txt(t(C.header).owner || 'Tadeu Martins')])
+              el('p', {class:'text-sm font-bold tracking-widest text-gray-900'}, [txt(t(C.header).brand || 'TMX SMART INDUSTRY')]),
+              el('p', {class:'-mt-0.5 text-[11px] font-medium uppercase tracking-[0.25em] text-blue-600'}, [txt(t(C.header).owner || 'Tadeu Martins')])
             ])
           ]),
-          el('nav', {class:'hidden md:flex items-center gap-6 text-gray-600'}, [
-            el('a', {href:'#tmxsmartpm', class:'hover:text-blue-600'}, [txt(t(C.header).navSmartPM || 'Pi')]),
-            el('a', {href:'#historia', class:'hover:text-blue-600'}, [txt(t(C.header).navHistory || 'Nossa História')]),
-            el('a', {href:'#sobre', class:'hover:text-blue-600'}, [txt(t(C.header).navAbout || 'Sobre')]),
-            el('a', {href:'#contato', class:'hover:text-blue-600'}, [txt(t(C.header).navContact || 'Contato')])
+          el('nav', {class:'hidden md:flex items-center gap-8 text-sm font-medium text-gray-500'}, [
+            el('a', {href:'#tmxsmartpm', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navSmartPM || 'Pi')]),
+            el('a', {href:'#historia', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navHistory || 'Nossa História')]),
+            el('a', {href:'#sobre', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navAbout || 'Sobre')]),
+            el('a', {href:'#contato', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navContact || 'Contato')])
           ]),
           el('div', {class:'flex items-center gap-3'}, [
             // Language switcher
-            el('div', {class:'flex gap-1 rounded-lg bg-gray-100 p-1'}, 
+            el('div', {class:'flex gap-0.5 rounded-lg bg-gray-100/80 p-1'}, 
               Object.entries(C.languages || {}).map(([lang, name]) =>
                 el('button', {
-                  class: `px-2 py-1 text-xs font-semibold rounded transition ${currentLang === lang ? 'bg-blue-600 text-white' : 'text-gray-600 hover:bg-gray-200'}`,
+                  class: `px-2.5 py-1 text-xs font-semibold rounded-md transition-all ${currentLang === lang ? 'bg-white text-blue-600 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`,
                   onclick: () => switchLanguage(lang)
                 }, [txt(lang.toUpperCase())])
               )
             ),
-            el('a', {href: (C.linkedin?.profile || '#contato'), target:'_blank', class:'hidden md:inline-block rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700'}, [txt('LinkedIn')])
+            el('a', {href: (C.linkedin?.profile || '#contato'), target:'_blank', class:'hidden md:inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 px-5 py-2.5 text-sm font-semibold text-white hover:from-blue-700 hover:to-blue-800 shadow-md shadow-blue-600/20 hover:shadow-lg hover:shadow-blue-600/30 transition-all'}, [
+              el('i', {'data-lucide':'linkedin', class:'w-4 h-4'}),
+              txt('LinkedIn')
+            ])
           ])
         ])
       )
     );
     root.appendChild(navbar);
 
-    // HERO with slideshow
-    const heroImages = C.theme?.heroImages || [];
-    const hero = el('section', {id:'home', class:'relative h-[80vh] min-h-[520px] w-full overflow-hidden'},[
-      // Slideshow container
-      el('div', {class:'hero-slideshow absolute inset-0'}, 
-        heroImages.map((img, idx) => 
-          el('img', {
-            src: img, 
-            alt: 'TAUON Screenshot ' + (idx + 1), 
-            class: `hero-slide h-full w-full object-cover ${idx === 0 ? 'active' : ''}`
-          })
-        )
-      ),
-      el('div', {class:'absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-800/60 to-white/90'}),
+    // HERO (gradient background, no images)
+    const hero = el('section', {id:'home', class:'relative h-[85vh] min-h-[560px] w-full overflow-hidden'},[
+      el('div', {class:'absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900'}),
+      el('div', {class:'absolute inset-0 bg-gradient-to-b from-gray-900/80 via-blue-900/60 to-gray-900/90'}),
       el('div', {class:'relative z-10 mx-auto flex h-full max-w-7xl items-center px-6'}, [
         el('div', {class:'max-w-2xl'}, [
-          el('p', {class:'text-sm font-semibold uppercase tracking-widest text-blue-200'}, [txt(t(C.hero).kicker || '')]),
-          el('h1', {class:'mt-3 text-4xl font-bold tracking-tight sm:text-6xl text-white'}, [txt(t(C.hero).heading || '')]),
-          el('p', {class:'mt-4 text-lg text-blue-100'}, [txt(t(C.hero).subheading || '')]),
-          el('div', {class:'mt-6 flex flex-wrap gap-3'}, [
-            el('a', {href:(t(C.hero).cta_primary_href||'#trajetoria'), class:'rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-soft hover:bg-blue-700'}, [txt(t(C.hero).cta_primary_text || 'Começar')]),
-            el('a', {href:(t(C.hero).cta_secondary_href||'#contato'), target:'_blank', class:'rounded-xl border border-white/50 bg-white/10 px-5 py-3 text-sm font-semibold text-white hover:bg-white/20'}, [txt(t(C.hero).cta_secondary_text || 'Saiba mais')])
+          el('div', {class:'inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 mb-6'}, [
+            el('div', {class:'h-2 w-2 rounded-full bg-blue-400 animate-pulse'}),
+            el('p', {class:'text-sm font-medium text-blue-200'}, [txt(t(C.hero).kicker || '')])
+          ]),
+          el('h1', {class:'text-4xl font-extrabold tracking-tight sm:text-6xl text-white leading-[1.1]'}, [txt(t(C.hero).heading || '')]),
+          el('p', {class:'mt-6 text-lg leading-relaxed text-blue-100/90'}, [txt(t(C.hero).subheading || '')]),
+          el('div', {class:'mt-8 flex flex-wrap gap-4'}, [
+            el('a', {href:(t(C.hero).cta_primary_href||'#trajetoria'), class:'rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-blue-700 shadow-soft hover:bg-blue-50 transition-all'}, [txt(t(C.hero).cta_primary_text || 'Começar')]),
+            el('a', {href:(t(C.hero).cta_secondary_href||'#contato'), target:'_blank', class:'rounded-xl border border-white/30 bg-white/5 backdrop-blur-sm px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/15 transition-all'}, [txt(t(C.hero).cta_secondary_text || 'Saiba mais')])
           ])
         ])
       ]),
@@ -657,38 +511,27 @@
     ]);
     root.appendChild(hero);
 
-    // Start hero slideshow
-    if (heroImages.length > 1) {
-      let currentSlide = 0;
-      setInterval(() => {
-        const slides = document.querySelectorAll('.hero-slide');
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-      }, 4000);
-    }
-
     // TAUON - First priority section
     if (C.tmxsmartpm?.enabled) {
-      const pm = el('section', {id:'tmxsmartpm', class:'mx-auto max-w-7xl px-6 py-16'}, [
+      const pm = el('section', {id:'tmxsmartpm', class:'mx-auto max-w-7xl px-6 py-20'}, [
         // Título principal
-        el('div', {class:'mx-auto max-w-4xl text-center mb-12'}, [
-          el('p', {class:'mb-2 text-sm font-semibold uppercase tracking-widest text-blue-600'}, [txt(t(C.tmxsmartpm).prelaunch)]),
-          el('h2', {class:'text-3xl font-bold tracking-tight sm:text-5xl mb-2 text-gray-900'}, [txt(t(C.tmxsmartpm).titulo || 'Pi - TAUON Project Intelligence')]),
-          t(C.tmxsmartpm).subtitulo ? el('p', {class:'text-xl text-blue-600 font-medium mb-6'}, [txt(t(C.tmxsmartpm).subtitulo)]) : null,
-          el('div', {class:'space-y-4 text-lg text-gray-600'}, (t(C.tmxsmartpm).introducao||'').split('\n\n').map(p => el('p', {}, [txt(p)])))
+        el('div', {class:'mx-auto max-w-4xl text-center mb-16'}, [
+          el('p', {class:'mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600'}, [txt(t(C.tmxsmartpm).prelaunch)]),
+          el('h2', {class:'text-3xl font-extrabold tracking-tight sm:text-5xl mb-3 text-gray-900'}, [txt(t(C.tmxsmartpm).titulo || 'Pi - TAUON Project Intelligence')]),
+          t(C.tmxsmartpm).subtitulo ? el('p', {class:'text-xl text-blue-600 font-medium mb-8'}, [txt(t(C.tmxsmartpm).subtitulo)]) : null,
+          el('div', {class:'space-y-4 text-lg text-gray-600 leading-relaxed'}, (t(C.tmxsmartpm).introducao||'').split('\n\n').map(p => el('p', {}, [txt(p)])))
         ]),
         // Prominent CTA Banner
-        el('div', {class:'mx-auto max-w-5xl mb-12'}, [
+        el('div', {class:'mx-auto max-w-5xl mb-16'}, [
           el('a', {
             href: (C.tmxsmartpm.url || '#contato'),
             target: '_blank',
-            class: 'block relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 p-1 shadow-2xl hover:shadow-blue-500/50 transition-all group'
+            class: 'block relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 p-1 shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 group'
           }, [
-            el('div', {class:'bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 rounded-[22px] px-8 py-6 sm:px-12 sm:py-8 text-center'}, [
-              el('h3', {class:'text-2xl sm:text-4xl font-bold text-white mb-3 drop-shadow-lg'}, [txt(t(C.tmxsmartpm).cta)]),
-              el('p', {class:'text-white/90 text-sm sm:text-base mb-4'}, [txt(t(C.ui).transformSchedule)]),
-              el('div', {class:'inline-flex items-center gap-2 text-white font-semibold'}, [
+            el('div', {class:'bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 rounded-[14px] px-8 py-8 sm:px-12 sm:py-10 text-center'}, [
+              el('h3', {class:'text-2xl sm:text-4xl font-extrabold text-white mb-4 drop-shadow-lg'}, [txt(t(C.tmxsmartpm).cta)]),
+              el('p', {class:'text-white/90 text-sm sm:text-base mb-5'}, [txt(t(C.ui).transformSchedule)]),
+              el('div', {class:'inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-lg px-5 py-2.5 text-white font-semibold text-sm'}, [
                 txt(currentLang === 'pt' ? 'Acessar agora' : currentLang === 'en' ? 'Access now' : 'Acceder ahora'),
                 el('i', {'data-lucide':'arrow-right', class:'h-5 w-5 group-hover:translate-x-1 transition-transform'})
               ])
@@ -696,42 +539,37 @@
           ])
         ]),
         // Destaque
-        el('div', {class:'mx-auto max-w-4xl text-center mb-8'}, [
+        el('div', {class:'mx-auto max-w-4xl text-center mb-10'}, [
           el('h3', {class:'text-2xl font-bold tracking-tight sm:text-3xl text-gray-900'}, [txt(t(C.tmxsmartpm).destaque || '')])
         ]),
         // Features grid
-        el('div', {class:'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12'}, (t(C.tmxsmartpm.features)||[]).map(feature => 
-          el('div', {class:'rounded-2xl border border-gray-200 bg-gray-50 p-6'}, [
-            el('h4', {class:'text-lg font-semibold mb-2 text-gray-900'}, [txt(feature.titulo)]),
-            el('p', {class:'text-sm text-gray-600'}, [txt(feature.descricao)])
+        el('div', {class:'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mb-16'}, (t(C.tmxsmartpm.features)||[]).map(feature => 
+          el('div', {class:'rounded-2xl border border-gray-200/80 bg-white p-7 shadow-card hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300'}, [
+            el('h4', {class:'text-lg font-bold mb-3 text-gray-900'}, [txt(feature.titulo)]),
+            el('p', {class:'text-sm text-gray-600 leading-relaxed'}, [txt(feature.descricao)])
           ])
         )),
-        // Screenshots Gallery
-        (t(C.tmxsmartpm.screenshots) && t(C.tmxsmartpm.screenshots).length > 0) ? el('div', {class:'mb-12'}, [
-          el('div', {class:'mx-auto max-w-4xl text-center mb-8'}, [
+        // YouTube Video
+        C.youtubeVideoId && /^[\w-]+$/.test(C.youtubeVideoId) ? el('div', {class:'mb-16'}, [
+          el('div', {class:'mx-auto max-w-4xl text-center mb-10'}, [
             el('h3', {class:'text-2xl font-bold tracking-tight sm:text-3xl text-gray-900'}, [txt(t(C.ui).screenshotsTitle)])
           ]),
-          el('div', {class:'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'}, (t(C.tmxsmartpm.screenshots)||[]).map((screenshot, idx) => 
-            el('div', {class:'group relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl'}, [
-              el('div', {class:'aspect-[16/10] w-full overflow-hidden'}, [
-                el('img', {src: screenshot.src, alt: screenshot.titulo, class:'h-full w-full object-cover transition-transform group-hover:scale-105', 'data-screenshot-index': String(idx), onclick: (e)=>openScreenshotLightbox(parseInt(e.currentTarget.getAttribute('data-screenshot-index')))})
-              ]),
-              el('div', {class:'p-4'}, [
-                el('h4', {class:'text-base font-semibold mb-1 text-gray-900'}, [txt(screenshot.titulo)]),
-                el('p', {class:'text-xs text-gray-600'}, [txt(screenshot.descricao)])
-              ])
+          el('div', {class:'mx-auto max-w-4xl'}, [
+            el('div', {class:'relative w-full overflow-hidden rounded-2xl border border-gray-200/80 shadow-card', style:'padding-top:56.25%'}, [
+              el('iframe', {
+                src: 'https://www.youtube.com/embed/' + C.youtubeVideoId + '?rel=0',
+                title: 'TAUON Project Intelligence',
+                class: 'absolute inset-0 w-full h-full border-0',
+                allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
+                allowfullscreen: 'true'
+              })
             ])
-          ))
-        ]) : null,
-        // Imagem e CTAs
-        el('div', {class:'grid grid-cols-1 items-center gap-10 lg:grid-cols-2'}, [
-          el('div', {}, [ 
-            el('img', {src: C.tmxsmartpm.image || '', alt: 'TAUON Project Intelligence Screenshot', class:'aspect-[16/10] w-full rounded-2xl border border-gray-200 object-cover shadow-soft'}) 
-          ]),
-          el('div', {class:'flex flex-col gap-4'}, [
-            el('a', {href:(C.tmxsmartpm.url||'#contato'), target:'_blank', class:'inline-flex items-center justify-center rounded-xl bg-blue-600 px-6 py-4 text-base font-semibold text-white hover:bg-blue-700 shadow-soft'}, [txt(t(C.ui).accessSmartPM)]),
-            el('a', {href:'#contato', class:'inline-flex items-center justify-center rounded-xl border border-gray-300 px-6 py-4 text-base font-semibold text-gray-700 hover:bg-gray-50'}, [txt(t(C.tmxsmartpm).cta_contact)])
           ])
+        ]) : null,
+        // CTAs
+        el('div', {class:'mx-auto max-w-md flex flex-col gap-5'}, [
+          el('a', {href:(C.tmxsmartpm.url||'#contato'), target:'_blank', class:'inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4 text-base font-semibold text-white hover:from-blue-700 hover:to-blue-800 shadow-md shadow-blue-600/20 hover:shadow-lg transition-all'}, [txt(t(C.ui).accessSmartPM)]),
+          el('a', {href:'#contato', class:'inline-flex items-center justify-center rounded-xl border border-gray-300 px-6 py-4 text-base font-semibold text-gray-700 hover:bg-gray-50 transition-all'}, [txt(t(C.tmxsmartpm).cta_contact)])
         ])
       ]);
       root.appendChild(pm);
@@ -740,44 +578,46 @@
     // HISTÓRIA DA TAUON (TAUON History Section)
     if (C.historia) {
       const historiaContent = t(C.historia);
-      const historia = el('section', {id:'historia', class:'mx-auto max-w-7xl px-6 py-16'}, [
-        el('div', {class:'mx-auto max-w-4xl text-center mb-12'}, [
-          el('p', {class:'mb-2 text-sm font-semibold uppercase tracking-widest text-blue-600'}, [txt(historiaContent.subtitulo || '')]),
-          el('h2', {class:'text-3xl font-bold tracking-tight sm:text-5xl text-gray-900'}, [txt(historiaContent.titulo || '')])
+      // Section divider
+      root.appendChild(el('div', {class:'section-divider mx-auto max-w-5xl my-4'}));
+      const historia = el('section', {id:'historia', class:'mx-auto max-w-7xl px-6 py-20'}, [
+        el('div', {class:'mx-auto max-w-4xl text-center mb-14'}, [
+          el('p', {class:'mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600'}, [txt(historiaContent.subtitulo || '')]),
+          el('h2', {class:'text-3xl font-extrabold tracking-tight sm:text-5xl text-gray-900'}, [txt(historiaContent.titulo || '')])
         ]),
-        el('div', {class:'grid grid-cols-1 gap-10 lg:grid-cols-3'}, [
+        el('div', {class:'grid grid-cols-1 gap-12 lg:grid-cols-3'}, [
           // Main text
           el('div', {class:'lg:col-span-2'}, [
-            el('div', {class:'space-y-4 text-gray-600 leading-7 text-lg'}, (historiaContent.texto||'').split('\n\n').map(p => el('p', {}, [txt(p)])))
+            el('div', {class:'space-y-5 text-gray-600 leading-7 text-lg'}, (historiaContent.texto||'').split('\n\n').map(p => el('p', {}, [txt(p)])))
           ]),
           // Side panel with mission, vision and founders
           el('aside', {class:'lg:col-span-1 space-y-6'}, [
             // Mission
-            el('div', {class:'rounded-2xl border border-gray-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-sm'}, [
-              el('div', {class:'flex items-center gap-3 mb-4'}, [
-                el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white'}, [el('i', {'data-lucide':'target', class:'h-5 w-5'})]),
-                el('h3', {class:'text-lg font-semibold text-gray-900'}, [txt(historiaContent.missao_titulo || '')])
+            el('div', {class:'rounded-2xl border border-gray-200/80 bg-gradient-to-br from-blue-50 to-white p-7 shadow-card'}, [
+              el('div', {class:'flex items-center gap-3 mb-5'}, [
+                el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'target', class:'h-5 w-5'})]),
+                el('h3', {class:'text-lg font-bold text-gray-900'}, [txt(historiaContent.missao_titulo || '')])
               ]),
               el('p', {class:'text-gray-600 leading-relaxed'}, [txt(historiaContent.missao || '')])
             ]),
             // Vision
-            historiaContent.visao ? el('div', {class:'rounded-2xl border border-gray-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-sm'}, [
-              el('div', {class:'flex items-center gap-3 mb-4'}, [
-                el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white'}, [el('i', {'data-lucide':'eye', class:'h-5 w-5'})]),
-                el('h3', {class:'text-lg font-semibold text-gray-900'}, [txt(historiaContent.visao_titulo || '')])
+            historiaContent.visao ? el('div', {class:'rounded-2xl border border-gray-200/80 bg-gradient-to-br from-blue-50 to-white p-7 shadow-card'}, [
+              el('div', {class:'flex items-center gap-3 mb-5'}, [
+                el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'eye', class:'h-5 w-5'})]),
+                el('h3', {class:'text-lg font-bold text-gray-900'}, [txt(historiaContent.visao_titulo || '')])
               ]),
               el('p', {class:'text-gray-600 leading-relaxed'}, [txt(historiaContent.visao || '')])
             ]) : null,
             // Founders
-            el('div', {class:'rounded-2xl border border-gray-200 bg-white p-6 shadow-sm'}, [
-              el('div', {class:'flex items-center gap-3 mb-4'}, [
-                el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white'}, [el('i', {'data-lucide':'users', class:'h-5 w-5'})]),
-                el('h3', {class:'text-lg font-semibold text-gray-900'}, [txt(historiaContent.fundadores_titulo || '')])
+            el('div', {class:'rounded-2xl border border-gray-200/80 bg-white p-7 shadow-card'}, [
+              el('div', {class:'flex items-center gap-3 mb-5'}, [
+                el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'users', class:'h-5 w-5'})]),
+                el('h3', {class:'text-lg font-bold text-gray-900'}, [txt(historiaContent.fundadores_titulo || '')])
               ]),
-              el('ul', {class:'space-y-3'}, (historiaContent.fundadores||[]).map(f => 
-                el('li', {class:'flex items-center justify-between'}, [
+              el('ul', {class:'space-y-4'}, (historiaContent.fundadores||[]).map(f => 
+                el('li', {class:'flex items-center justify-between py-1'}, [
                   el('span', {class:'font-semibold text-gray-900'}, [txt(f.nome)]),
-                  el('a', {href: f.linkedin || '#', target: '_blank', class:'text-blue-600 hover:text-blue-800 hover:underline flex items-center gap-1 text-sm'}, [
+                  el('a', {href: f.linkedin || '#', target: '_blank', class:'text-blue-600 hover:text-blue-800 flex items-center gap-1.5 text-sm font-medium transition-colors'}, [
                     el('i', {'data-lucide':'linkedin', class:'h-4 w-4'}),
                     txt('LinkedIn')
                   ])
@@ -790,12 +630,13 @@
       root.appendChild(historia);
     }
 
-    // SOBRE (ARTIGOS + GALERIA) - Tabbed section (without personal curriculum)
-    const imgs = C.galeria?.imagens || [];
-    const sobre = el('section', {id:'sobre', class:'mx-auto max-w-7xl px-6 py-16 bg-gray-50 rounded-3xl my-8'}, [
-      el('div', {class:'mx-auto max-w-3xl text-center mb-12'}, [
-        el('p', {class:'mb-2 text-sm font-semibold uppercase tracking-widest text-blue-600'}, [txt(t(C.ui).about)]),
-        el('h2', {class:'text-3xl font-bold tracking-tight sm:text-4xl text-gray-900'}, [txt('TAUON Smart Industry')])
+    // SOBRE (ARTIGOS) - Tabbed section
+    // Section divider
+    root.appendChild(el('div', {class:'section-divider mx-auto max-w-5xl my-4'}));
+    const sobre = el('section', {id:'sobre', class:'mx-auto max-w-7xl px-6 py-20 bg-gray-50/80 rounded-3xl my-8'}, [
+      el('div', {class:'mx-auto max-w-3xl text-center mb-14'}, [
+        el('p', {class:'mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600'}, [txt(t(C.ui).about)]),
+        el('h2', {class:'text-3xl font-extrabold tracking-tight sm:text-4xl text-gray-900'}, [txt('TAUON Smart Industry')])
       ]),
       // Tabs container - Gallery tab hidden
       el('div', {class:'mb-8'}, [
@@ -805,10 +646,10 @@
       ]),
       // Tab: Artigos
       el('div', {class:'tab-content', 'data-tab':'artigos'}, [
-        el('div', {class:'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'}, (C.artigos||[]).map(a => el('a', {href:a.url||'#', target:'_blank', class:'group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg'}, [
-          el('h3', {class:'text-lg font-semibold text-gray-900 group-hover:underline underline-offset-4'}, [txt(a.titulo||t(C.ui).article)]),
-          a.descricao ? el('p', {class:'mt-2 text-sm text-gray-600'}, [txt(a.descricao)]) : null,
-          el('div', {class:'mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-600'}, [txt(t(C.ui).read), el('i', {'data-lucide':'arrow-right', class:'h-4 w-4'})])
+        el('div', {class:'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'}, (C.artigos||[]).map(a => el('a', {href:a.url||'#', target:'_blank', class:'group rounded-2xl border border-gray-200/80 bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'}, [
+          el('h3', {class:'text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors'}, [txt(a.titulo||t(C.ui).article)]),
+          a.descricao ? el('p', {class:'mt-3 text-sm text-gray-500 leading-relaxed'}, [txt(a.descricao)]) : null,
+          el('div', {class:'mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-600'}, [txt(t(C.ui).read), el('i', {'data-lucide':'arrow-right', class:'h-4 w-4 group-hover:translate-x-1 transition-transform'})])
         ])))
       ])
       // Gallery tab hidden
@@ -836,99 +677,32 @@
       }
     }
 
-    // Lightbox (needed for gallery tab)
-    let currentIndex = 0;
-    const overlay = el('div', {class:'fixed inset-0 z-[60] hidden items-center justify-center bg-black/90 p-4'}, [
-      el('button', {class:'absolute top-4 right-4 rounded-lg bg-white/10 p-2 hover:bg-white/20', onclick: closeLightbox}, [el('i', {'data-lucide':'x', class:'w-6 h-6 text-white'})]),
-      el('button', {class:'absolute left-4 top-1/2 -translate-y-1/2 rounded-lg bg-white/10 p-3 hover:bg-white/20', onclick: ()=>navigate(-1)}, [el('i', {'data-lucide':'chevron-left', class:'w-6 h-6 text-white'})]),
-      el('div', {class:'text-center max-w-4xl'}, [
-        el('img', {id:'lightbox-img', class:'max-h-[75vh] max-w-[90vw] rounded-xl shadow-2xl mx-auto mb-4'}),
-        el('p', {id:'lightbox-desc', class:'text-white text-lg'}, [txt('')])
-      ]),
-      el('button', {class:'absolute right-4 top-1/2 -translate-y-1/2 rounded-lg bg-white/10 p-3 hover:bg-white/20', onclick: ()=>navigate(1)}, [el('i', {'data-lucide':'chevron-right', class:'w-6 h-6 text-white'})])
-    ]);
-    document.body.appendChild(overlay);
-    function openLightbox(i){ 
-      currentIndex = i; 
-      const img = imgs[currentIndex];
-      const src = typeof img === 'string' ? img : img.src;
-      const desc = typeof img === 'string' ? `${t(C.ui).photo} ${i+1}` : img.descricao;
-      document.getElementById('lightbox-img').src = src; 
-      document.getElementById('lightbox-desc').textContent = desc;
-      overlay.style.display='flex'; 
-    }
-    function closeLightbox(){ overlay.style.display='none'; }
-    function navigate(step){ 
-      currentIndex = (currentIndex + step + imgs.length) % imgs.length; 
-      const img = imgs[currentIndex];
-      const src = typeof img === 'string' ? img : img.src;
-      const desc = typeof img === 'string' ? `${t(C.ui).photo} ${currentIndex+1}` : img.descricao;
-      document.getElementById('lightbox-img').src = src; 
-      document.getElementById('lightbox-desc').textContent = desc;
-    }
-    document.addEventListener('keydown', (e)=>{ if(overlay.style.display==='flex'){ if(e.key==='Escape') closeLightbox(); if(e.key==='ArrowRight') navigate(1); if(e.key==='ArrowLeft') navigate(-1);} });
-
-    // Screenshot Lightbox (for SmartPM screenshots)
-    let currentScreenshotIndex = 0;
-    const screenshotOverlay = el('div', {class:'fixed inset-0 z-[60] hidden items-center justify-center bg-black/90 p-4'}, [
-      el('button', {class:'absolute top-4 right-4 rounded-lg bg-white/10 p-2 hover:bg-white/20', onclick: closeScreenshotLightbox}, [el('i', {'data-lucide':'x', class:'w-6 h-6 text-white'})]),
-      el('button', {class:'absolute left-4 top-1/2 -translate-y-1/2 rounded-lg bg-white/10 p-3 hover:bg-white/20', onclick: ()=>navigateScreenshot(-1)}, [el('i', {'data-lucide':'chevron-left', class:'w-6 h-6 text-white'})]),
-      el('div', {class:'text-center max-w-6xl'}, [
-        el('img', {id:'screenshot-lightbox-img', class:'max-h-[75vh] max-w-[90vw] rounded-xl shadow-2xl mx-auto mb-4'}),
-        el('h3', {id:'screenshot-lightbox-title', class:'text-white text-xl font-bold mb-2'}, [txt('')]),
-        el('p', {id:'screenshot-lightbox-desc', class:'text-blue-100 text-base'}, [txt('')])
-      ]),
-      el('button', {class:'absolute right-4 top-1/2 -translate-y-1/2 rounded-lg bg-white/10 p-3 hover:bg-white/20', onclick: ()=>navigateScreenshot(1)}, [el('i', {'data-lucide':'chevron-right', class:'w-6 h-6 text-white'})])
-    ]);
-    document.body.appendChild(screenshotOverlay);
-    const screenshots = t(C.tmxsmartpm?.screenshots) || [];
-    function openScreenshotLightbox(i){ 
-      currentScreenshotIndex = i; 
-      const screenshot = screenshots[currentScreenshotIndex];
-      document.getElementById('screenshot-lightbox-img').src = screenshot.src; 
-      document.getElementById('screenshot-lightbox-title').textContent = screenshot.titulo;
-      document.getElementById('screenshot-lightbox-desc').textContent = screenshot.descricao;
-      screenshotOverlay.style.display='flex'; 
-      if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-      }
-    }
-    function closeScreenshotLightbox(){ screenshotOverlay.style.display='none'; }
-    function navigateScreenshot(step){ 
-      currentScreenshotIndex = (currentScreenshotIndex + step + screenshots.length) % screenshots.length; 
-      const screenshot = screenshots[currentScreenshotIndex];
-      document.getElementById('screenshot-lightbox-img').src = screenshot.src; 
-      document.getElementById('screenshot-lightbox-title').textContent = screenshot.titulo;
-      document.getElementById('screenshot-lightbox-desc').textContent = screenshot.descricao;
-    }
-    document.addEventListener('keydown', (e)=>{ if(screenshotOverlay.style.display==='flex'){ if(e.key==='Escape') closeScreenshotLightbox(); if(e.key==='ArrowRight') navigateScreenshot(1); if(e.key==='ArrowLeft') navigateScreenshot(-1);} });
-
     // LIVRO section hidden
 
     // CONTATO
-    const contato = el('section', {id:'contato', class:'mx-auto max-w-7xl px-6 py-16 bg-blue-600 rounded-3xl my-8'}, [
+    const contato = el('section', {id:'contato', class:'mx-auto max-w-7xl px-6 py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-3xl my-8'}, [
       el('div', {class:'mx-auto max-w-3xl text-center'}, [
-        el('p', {class:'mb-2 text-sm font-semibold uppercase tracking-widest text-blue-200'}, [txt(t(C.ui).contact)]),
-        el('h2', {class:'text-3xl font-bold tracking-tight sm:text-4xl text-white'}, [txt(t(C.ui).talkToMe)]),
-        el('p', {class:'mt-3 text-lg text-blue-100'}, [txt(t(C.ui).contactDescription)])
+        el('p', {class:'mb-3 text-sm font-semibold uppercase tracking-widest text-blue-200/80'}, [txt(t(C.ui).contact)]),
+        el('h2', {class:'text-3xl font-extrabold tracking-tight sm:text-4xl text-white'}, [txt(t(C.ui).talkToMe)]),
+        el('p', {class:'mt-4 text-lg text-blue-100/90 leading-relaxed'}, [txt(t(C.ui).contactDescription)])
       ]),
-      el('div', {class:'mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3'}, [
-        el('a', {href:'mailto:'+(C.contato?.email||'#'), class:'rounded-2xl bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg'}, [
-          el('div', {class:'flex items-start gap-3'}, [
-            el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white'}, [el('i', {'data-lucide':'mail', class:'h-5 w-5'})]),
-            el('div', {}, [ el('h4', {class:'text-lg font-semibold text-gray-900'}, [txt(t(C.ui).email)]), el('p', {class:'text-sm text-gray-600'}, [txt(C.contato?.email || '')]) ])
+      el('div', {class:'mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3'}, [
+        el('a', {href:'mailto:'+(C.contato?.email||'#'), class:'rounded-2xl bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'}, [
+          el('div', {class:'flex items-start gap-4'}, [
+            el('div', {class:'flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'mail', class:'h-5 w-5'})]),
+            el('div', {}, [ el('h4', {class:'text-lg font-bold text-gray-900'}, [txt(t(C.ui).email)]), el('p', {class:'text-sm text-gray-500 mt-1'}, [txt(C.contato?.email || '')]) ])
           ])
         ]),
-        el('a', {href:(C.contato?.whatsapp||'#'), target:'_blank', class:'rounded-2xl bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg'}, [
-          el('div', {class:'flex items-start gap-3'}, [
-            el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white'}, [el('i', {'data-lucide':'phone', class:'h-5 w-5'})]),
-            el('div', {}, [ el('h4', {class:'text-lg font-semibold text-gray-900'}, [txt(t(C.ui).whatsapp)]), el('p', {class:'text-sm text-gray-600'}, [txt(C.contato?.telefone || '')]) ])
+        el('a', {href:(C.contato?.whatsapp||'#'), target:'_blank', class:'rounded-2xl bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'}, [
+          el('div', {class:'flex items-start gap-4'}, [
+            el('div', {class:'flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'phone', class:'h-5 w-5'})]),
+            el('div', {}, [ el('h4', {class:'text-lg font-bold text-gray-900'}, [txt(t(C.ui).whatsapp)]), el('p', {class:'text-sm text-gray-500 mt-1'}, [txt(C.contato?.telefone || '')]) ])
           ])
         ]),
-        el('a', {href:(C.linkedin?.profile||'#'), target:'_blank', class:'rounded-2xl bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg'}, [
-          el('div', {class:'flex items-start gap-3'}, [
-            el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white'}, [el('i', {'data-lucide':'linkedin', class:'h-5 w-5'})]),
-            el('div', {}, [ el('h4', {class:'text-lg font-semibold text-gray-900'}, [txt(t(C.ui).linkedin)]), el('p', {class:'text-sm text-gray-600'}, [txt(t(C.ui).visitProfile)]) ])
+        el('a', {href:(C.linkedin?.profile||'#'), target:'_blank', class:'rounded-2xl bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'}, [
+          el('div', {class:'flex items-start gap-4'}, [
+            el('div', {class:'flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'linkedin', class:'h-5 w-5'})]),
+            el('div', {}, [ el('h4', {class:'text-lg font-bold text-gray-900'}, [txt(t(C.ui).linkedin)]), el('p', {class:'text-sm text-gray-500 mt-1'}, [txt(t(C.ui).visitProfile)]) ])
           ])
         ])
       ])
@@ -937,13 +711,13 @@
 
     // FOOTER
     const footer = el('footer', {class:'border-t border-gray-200 bg-gray-50'}, [
-      el('div', {class:'mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 sm:flex-row'}, [
-        el('p', {class:'text-sm text-gray-600'}, [txt('© '+ new Date().getFullYear() +' '+ t(C.ui).copyright)]),
-        el('div', {class:'flex items-center gap-4 text-sm text-gray-600'}, [
-          el('a', {href:'#tmxsmartpm', class:'hover:text-blue-600'}, [txt(t(C.header).navSmartPM)]),
-          el('a', {href:'#historia', class:'hover:text-blue-600'}, [txt(t(C.header).navHistory)]),
-          el('a', {href:'#sobre', class:'hover:text-blue-600'}, [txt(t(C.header).navAbout)]),
-          el('a', {href:'#contato', class:'hover:text-blue-600'}, [txt(t(C.header).navContact)])
+      el('div', {class:'mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row'}, [
+        el('p', {class:'text-sm text-gray-500'}, [txt('© '+ new Date().getFullYear() +' '+ t(C.ui).copyright)]),
+        el('div', {class:'flex items-center gap-6 text-sm font-medium text-gray-500'}, [
+          el('a', {href:'#tmxsmartpm', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navSmartPM)]),
+          el('a', {href:'#historia', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navHistory)]),
+          el('a', {href:'#sobre', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navAbout)]),
+          el('a', {href:'#contato', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navContact)])
         ])
       ])
     ]);
@@ -953,6 +727,20 @@
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
     }
+
+    // Scroll reveal animations
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('section, aside, .tab-content').forEach(section => {
+      section.classList.add('reveal');
+      revealObserver.observe(section);
+    });
     }
 
     // Initial render
