@@ -1,10 +1,63 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TAUON Smart Industry - Project Intelligence</title>
-  <meta name="description" content="TAUON Smart Industry - Gestão Inteligente de Projetos Industriais. Conheça o Pi - TAUON Project Intelligence.">
+  <meta name="theme-color" content="#1d4ed8"/>
+  <title>TAUON Smart Industry — Pi: Gestão Inteligente de Cronogramas com IA</title>
+  <meta name="description" content="TAUON Smart Industry constrói o Pi (Project Intelligence): software com IA generativa que cria, analisa e gerencia cronogramas industriais integrado ao Microsoft Project e Primavera P6.">
+  <meta name="keywords" content="gestão de projetos, cronograma, Microsoft Project, Primavera P6, IA generativa, indústria 4.0, manutenção industrial, TAUON, Project Intelligence">
+  <meta name="author" content="TAUON Smart Industry">
+  <link rel="canonical" href="https://tauon.com.br/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TAUON Smart Industry">
+  <meta property="og:title" content="Pi — Gestão Inteligente de Cronogramas com IA">
+  <meta property="og:description" content="Crie, analise e gerencie cronogramas industriais em segundos. Integração total com Microsoft Project e Primavera P6.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:image" content="assets/hero.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pi — Gestão Inteligente de Cronogramas com IA">
+  <meta name="twitter:description" content="Software com IA generativa para criação e gestão de cronogramas industriais.">
+  <meta name="twitter:image" content="assets/hero.jpg">
+
+  <!-- Favicon (inline SVG, no extra request) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d4ed8'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Inter,system-ui,sans-serif' font-weight='800' font-size='34' fill='white'%3E%CF%80%3C/text%3E%3C/svg%3E">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "TAUON Smart Industry",
+        "url": "https://tauon.com.br/",
+        "email": "comercial@tauon.com.br",
+        "description": "Empresa brasileira especializada em gestão inteligente de projetos industriais.",
+        "founder": [
+          {"@type":"Person","name":"Tadeu Rosa Martins"},
+          {"@type":"Person","name":"Adriano Resende"},
+          {"@type":"Person","name":"Sérgio Souza"}
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Pi — TAUON Project Intelligence",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows",
+        "description": "Software inteligente de criação e gestão de cronogramas que une IA generativa à robustez do Microsoft Project e Primavera P6.",
+        "offers": {"@type":"Offer","price":"0","priceCurrency":"BRL","availability":"https://schema.org/PreOrder"}
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -33,9 +86,21 @@
     .section-divider { height: 1px; background: linear-gradient(to right, transparent, #e5e7eb, transparent); }
     ::selection { background: #2563eb; color: #fff; }
     a { transition: color .2s ease, transform .2s ease; }
+    /* Top scroll progress indicator */
+    #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, #2563eb, #f59e0b); z-index: 60; transition: width .1s linear; }
+    /* Logo strip grayscale → color on hover */
+    .logo-mark { filter: grayscale(1) opacity(.55); transition: filter .25s ease; }
+    .logo-mark:hover { filter: none; }
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800 antialiased">
+  <div id="scroll-progress" aria-hidden="true"></div>
+  <a href="#tmxsmartpm" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[70] focus:bg-blue-700 focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:font-semibold">Pular para o conteúdo</a>
   <div id="root"></div>
 
   <!-- ====== CONTEÚDO EDITÁVEL (JSON) ====== -->
@@ -46,7 +111,7 @@
     "overlay": "bg-gradient-to-b from-black/70 via-black/50 to-blue-950/70",
     "accent": "text-blue-400"
   },
-  "youtubeVideoId": "NeYPgKiglOY",
+  "videoUrl": "https://pub-0543565b5f00486a967499060a10fac0.r2.dev/TAUON%20Apresenta%C3%A7%C3%A3o%20corporativa%20(V3)%20%20(1).mp4",
   "languages": {
     "pt": "Português",
     "en": "English",
@@ -107,7 +172,30 @@
       "whatsapp": "WhatsApp",
       "linkedin": "LinkedIn",
       "visitProfile": "Visitar perfil",
-      "copyright": "TAUON Smart Industry."
+      "copyright": "TAUON Smart Industry.",
+      "requestDemo": "Solicitar Demo",
+      "stats_years_label": "anos de experiência industrial",
+      "stats_failure_label": "dos projetos industriais não atingem prazo, custo ou escopo",
+      "stats_founders_label": "especialistas fundadores em projetos, manutenção e IA",
+      "trustedBy": "Experiência forjada em organizações de referência",
+      "howItWorksTitle": "Como o Pi funciona",
+      "howItWorksSubtitle": "Do escopo ao cronograma otimizado em três passos",
+      "step1_title": "Descreva o projeto",
+      "step1_desc": "Digite o escopo em linguagem natural ou faça upload do seu arquivo do Microsoft Project / Primavera.",
+      "step2_title": "A IA monta o plano",
+      "step2_desc": "O Pi gera tarefas, durações, dependências e marcos com base em projetos similares.",
+      "step3_title": "Otimize e exporte",
+      "step3_desc": "Ajuste no Gantt ou Kanban, gere Status Reports e devolva o cronograma para o Project ou P6.",
+      "integrationsTitle": "Integrações nativas",
+      "integrationsSubtitle": "Pi conversa em duas vias com as ferramentas que sua engenharia já usa",
+      "integration_msproject_desc": "Importação e exportação fluida via COM, sem perda de estrutura, recursos ou linha de base.",
+      "integration_p6_desc": "Sincronização bidirecional de cronogramas, atividades e atualizações com o Primavera P6.",
+      "watchVideo": "Assistir apresentação",
+      "footer_product": "Produto",
+      "footer_company": "Empresa",
+      "footer_contact": "Contato",
+      "footer_rights": "Todos os direitos reservados.",
+      "footer_trademarks": "Microsoft® e Microsoft Project® são marcas registradas da Microsoft Corporation. Oracle® e Primavera® são marcas registradas da Oracle Corporation. Esta página utiliza essas marcas apenas para indicar compatibilidade."
     },
     "en": {
       "scrollHint": "Scroll to see more",
@@ -134,7 +222,30 @@
       "whatsapp": "WhatsApp",
       "linkedin": "LinkedIn",
       "visitProfile": "Visit profile",
-      "copyright": "TAUON Smart Industry."
+      "copyright": "TAUON Smart Industry.",
+      "requestDemo": "Request Demo",
+      "stats_years_label": "years of industrial experience",
+      "stats_failure_label": "of industrial projects miss schedule, cost or scope",
+      "stats_founders_label": "founders specialized in projects, maintenance and AI",
+      "trustedBy": "Experience forged at reference organizations",
+      "howItWorksTitle": "How Pi works",
+      "howItWorksSubtitle": "From scope to optimized schedule in three steps",
+      "step1_title": "Describe the project",
+      "step1_desc": "Type the scope in natural language or upload your Microsoft Project / Primavera file.",
+      "step2_title": "AI builds the plan",
+      "step2_desc": "Pi generates tasks, durations, dependencies and milestones based on similar projects.",
+      "step3_title": "Optimize and export",
+      "step3_desc": "Tweak in Gantt or Kanban, generate Status Reports and push the schedule back to Project or P6.",
+      "integrationsTitle": "Native integrations",
+      "integrationsSubtitle": "Pi talks both ways with the tools your engineering team already uses",
+      "integration_msproject_desc": "Smooth COM-based import and export, with no loss of structure, resources or baseline.",
+      "integration_p6_desc": "Bidirectional sync of schedules, activities and updates with Primavera P6.",
+      "watchVideo": "Watch presentation",
+      "footer_product": "Product",
+      "footer_company": "Company",
+      "footer_contact": "Contact",
+      "footer_rights": "All rights reserved.",
+      "footer_trademarks": "Microsoft® and Microsoft Project® are trademarks of Microsoft Corporation. Oracle® and Primavera® are trademarks of Oracle Corporation. These marks are used here only to indicate compatibility."
     },
     "es": {
       "scrollHint": "Desplácese para ver más",
@@ -161,7 +272,30 @@
       "whatsapp": "WhatsApp",
       "linkedin": "LinkedIn",
       "visitProfile": "Visitar perfil",
-      "copyright": "TAUON Smart Industry."
+      "copyright": "TAUON Smart Industry.",
+      "requestDemo": "Solicitar Demo",
+      "stats_years_label": "años de experiencia industrial",
+      "stats_failure_label": "de los proyectos industriales no cumplen plazo, costo o alcance",
+      "stats_founders_label": "especialistas fundadores en proyectos, mantenimiento e IA",
+      "trustedBy": "Experiencia forjada en organizaciones de referencia",
+      "howItWorksTitle": "Cómo funciona Pi",
+      "howItWorksSubtitle": "Del alcance al cronograma optimizado en tres pasos",
+      "step1_title": "Describa el proyecto",
+      "step1_desc": "Escriba el alcance en lenguaje natural o suba su archivo de Microsoft Project / Primavera.",
+      "step2_title": "La IA arma el plan",
+      "step2_desc": "Pi genera tareas, duraciones, dependencias e hitos basados en proyectos similares.",
+      "step3_title": "Optimice y exporte",
+      "step3_desc": "Ajuste en Gantt o Kanban, genere Status Reports y devuelva el cronograma a Project o P6.",
+      "integrationsTitle": "Integraciones nativas",
+      "integrationsSubtitle": "Pi dialoga en dos vías con las herramientas que su ingeniería ya utiliza",
+      "integration_msproject_desc": "Importación y exportación fluida vía COM, sin pérdida de estructura, recursos ni línea base.",
+      "integration_p6_desc": "Sincronización bidireccional de cronogramas, actividades y actualizaciones con Primavera P6.",
+      "watchVideo": "Ver presentación",
+      "footer_product": "Producto",
+      "footer_company": "Empresa",
+      "footer_contact": "Contacto",
+      "footer_rights": "Todos los derechos reservados.",
+      "footer_trademarks": "Microsoft® y Microsoft Project® son marcas registradas de Microsoft Corporation. Oracle® y Primavera® son marcas registradas de Oracle Corporation. Esta página usa estas marcas solo para indicar compatibilidad."
     }
   },
   "hero": {
@@ -207,9 +341,9 @@
       "missao": "Transformar a gestão de projetos industriais por meio de tecnologia inteligente e metodologias colaborativas, tornando o sucesso a regra, não a exceção.",
       "fundadores_titulo": "Nossos Fundadores",
       "fundadores": [
-        {"nome": "Tadeu Martins", "linkedin": "https://www.linkedin.com/in/tadeu-martins-pmp-tecnologia-industria-engenharia-transformacao-digital-projetos-gestao-inovacao/"},
-        {"nome": "Adriano Resende", "linkedin": "https://www.linkedin.com/in/adriano-resende-7b966a163/"},
-        {"nome": "Sérgio Souza", "linkedin": "https://www.linkedin.com/in/sergiosoud/"}
+        {"nome": "Tadeu Martins"},
+        {"nome": "Adriano Resende"},
+        {"nome": "Sérgio Souza"}
       ]
     },
     "en": {
@@ -220,9 +354,9 @@
       "missao": "Transform industrial project management through intelligent technology and collaborative methodologies, making success the rule, not the exception.",
       "fundadores_titulo": "Our Founders",
       "fundadores": [
-        {"nome": "Tadeu Martins", "linkedin": "https://www.linkedin.com/in/tadeu-martins-pmp-tecnologia-industria-engenharia-transformacao-digital-projetos-gestao-inovacao/"},
-        {"nome": "Adriano Resende", "linkedin": "https://www.linkedin.com/in/adriano-resende-7b966a163/"},
-        {"nome": "Sérgio Souza", "linkedin": "https://www.linkedin.com/in/sergiosoud/"}
+        {"nome": "Tadeu Martins"},
+        {"nome": "Adriano Resende"},
+        {"nome": "Sérgio Souza"}
       ]
     },
     "es": {
@@ -233,9 +367,9 @@
       "missao": "Transformar la gestión de proyectos industriales por medio de tecnología inteligente y metodologías colaborativas, haciendo del éxito la regla, no la excepción.",
       "fundadores_titulo": "Nuestros Fundadores",
       "fundadores": [
-        {"nome": "Tadeu Martins", "linkedin": "https://www.linkedin.com/in/tadeu-martins-pmp-tecnologia-industria-engenharia-transformacao-digital-projetos-gestao-inovacao/"},
-        {"nome": "Adriano Resende", "linkedin": "https://www.linkedin.com/in/adriano-resende-7b966a163/"},
-        {"nome": "Sérgio Souza", "linkedin": "https://www.linkedin.com/in/sergiosoud/"}
+        {"nome": "Tadeu Martins"},
+        {"nome": "Adriano Resende"},
+        {"nome": "Sérgio Souza"}
       ]
     }
   },
@@ -303,96 +437,111 @@
     "features": {
       "pt": [
         {
-          "icon": "",
+          "icon": "sparkles",
           "titulo": "Criação automática de cronogramas com IA Generativa de ponta",
           "descricao": "Basta descrever seu projeto — a IA entende e gera todo o planejamento."
         },
         {
-          "icon": "",
+          "icon": "git-branch",
           "titulo": "Integração total com o Microsoft Project (via COM)",
           "descricao": "Importação e exportação fluida de cronogramas, sem perda de estrutura."
         },
         {
-          "icon": "",
+          "icon": "repeat-2",
+          "titulo": "Integração bidirecional com o Primavera P6",
+          "descricao": "Sincronize cronogramas, atividades e atualizações entre o Pi e o Primavera nos dois sentidos, mantendo todos os dados consistentes."
+        },
+        {
+          "icon": "bar-chart-3",
           "titulo": "Visualização em dashboards exclusivos de Business Intelligence",
           "descricao": "Acompanhe KPIs de prazo, custo, avanço físico e desempenho da equipe em tempo real."
         },
         {
-          "icon": "",
+          "icon": "file-text",
           "titulo": "Geração automática de Status Reports",
           "descricao": "Relatórios inteligentes e personalizáveis, prontos para enviar à diretoria."
         },
         {
-          "icon": "",
+          "icon": "kanban-square",
           "titulo": "Gestão flexível: Gantt ou Kanban",
           "descricao": "Trabalhe com projetos híbridos ou ágeis no mesmo ambiente, escolhendo a visualização ideal."
         },
         {
-          "icon": "",
+          "icon": "brain-circuit",
           "titulo": "Otimização contínua com IA",
           "descricao": "A IA aprende com seus projetos anteriores e sugere melhorias a cada nova entrega."
         }
       ],
       "en": [
         {
-          "icon": "",
+          "icon": "sparkles",
           "titulo": "Automatic schedule creation with cutting-edge Generative AI",
           "descricao": "Just describe your project — AI understands and generates the entire plan."
         },
         {
-          "icon": "",
+          "icon": "git-branch",
           "titulo": "Full integration with Microsoft Project (via COM)",
           "descricao": "Seamless import and export of schedules, without loss of structure."
         },
         {
-          "icon": "",
+          "icon": "repeat-2",
+          "titulo": "Bidirectional integration with Primavera P6",
+          "descricao": "Sync schedules, activities, and updates between Pi and Primavera in both directions, keeping all data consistent."
+        },
+        {
+          "icon": "bar-chart-3",
           "titulo": "Visualization in exclusive Business Intelligence dashboards",
           "descricao": "Track KPIs for deadlines, costs, physical progress and team performance in real time."
         },
         {
-          "icon": "",
+          "icon": "file-text",
           "titulo": "Automatic Status Report generation",
           "descricao": "Smart and customizable reports, ready to send to management."
         },
         {
-          "icon": "",
+          "icon": "kanban-square",
           "titulo": "Flexible management: Gantt or Kanban",
           "descricao": "Work with hybrid or agile projects in the same environment, choosing the ideal view."
         },
         {
-          "icon": "",
+          "icon": "brain-circuit",
           "titulo": "Continuous optimization with AI",
           "descricao": "AI learns from your previous projects and suggests improvements with each new delivery."
         }
       ],
       "es": [
         {
-          "icon": "",
+          "icon": "sparkles",
           "titulo": "Creación automática de cronogramas con IA Generativa de punta",
           "descricao": "Solo describa su proyecto — la IA entiende y genera toda la planificación."
         },
         {
-          "icon": "",
+          "icon": "git-branch",
           "titulo": "Integración total con Microsoft Project (vía COM)",
           "descricao": "Importación y exportación fluida de cronogramas, sin pérdida de estructura."
         },
         {
-          "icon": "",
+          "icon": "repeat-2",
+          "titulo": "Integración bidireccional con Primavera P6",
+          "descricao": "Sincronice cronogramas, actividades y actualizaciones entre Pi y Primavera en ambos sentidos, manteniendo todos los datos consistentes."
+        },
+        {
+          "icon": "bar-chart-3",
           "titulo": "Visualización en dashboards exclusivos de Business Intelligence",
           "descricao": "Realice seguimiento de KPIs de plazos, costos, avance físico y rendimiento del equipo en tiempo real."
         },
         {
-          "icon": "",
+          "icon": "file-text",
           "titulo": "Generación automática de Status Reports",
           "descricao": "Informes inteligentes y personalizables, listos para enviar a la dirección."
         },
         {
-          "icon": "",
+          "icon": "kanban-square",
           "titulo": "Gestión flexible: Gantt o Kanban",
           "descricao": "Trabaje con proyectos híbridos o ágiles en el mismo entorno, eligiendo la vista ideal."
         },
         {
-          "icon": "",
+          "icon": "brain-circuit",
           "titulo": "Optimización continua con IA",
           "descricao": "La IA aprende de sus proyectos anteriores y sugiere mejoras en cada nueva entrega."
         }
@@ -408,7 +557,7 @@
     "profile": "https://www.linkedin.com/in/tadeu-martins-pmp-tecnologia-industria-engenharia-transformacao-digital-projetos-gestao-inovacao/?locale=pt_BR"
   },
   "contato": {
-    "email": "Engetec01@gmail.com",
+    "email": "comercial@tauon.com.br",
     "telefone": "+55 (15) 98112-7358",
     "whatsapp": "https://wa.me/5515981127358"
   }
@@ -416,9 +565,25 @@
 
   <script>
   (function(){
-    let currentLang = localStorage.getItem('tmx-lang') || 'pt';
+    // Detect language: localStorage > navigator > 'pt'
+    function detectLang() {
+      const saved = localStorage.getItem('tmx-lang');
+      if (saved && ['pt','en','es'].includes(saved)) return saved;
+      const nav = (navigator.language || 'pt').toLowerCase();
+      if (nav.startsWith('en')) return 'en';
+      if (nav.startsWith('es')) return 'es';
+      return 'pt';
+    }
+    let currentLang = detectLang();
     const C = JSON.parse(document.getElementById('site-content').textContent);
     document.title = C.titulo || document.title;
+
+    // Sync <html lang>
+    function syncHtmlLang() {
+      const map = { pt: 'pt-BR', en: 'en', es: 'es' };
+      document.documentElement.setAttribute('lang', map[currentLang] || 'pt-BR');
+    }
+    syncHtmlLang();
 
     // Helper to get translated text
     const t = (obj) => {
@@ -429,6 +594,7 @@
     const el = (tag, attrs={}, children=[]) => {
       const n = document.createElement(tag);
       Object.entries(attrs).forEach(([k,v])=>{
+        if (v === null || v === undefined || v === false) return;
         if (k === 'class') n.className = v;
         else if (k === 'html') n.innerHTML = v;
         else if (k.startsWith('on') && typeof v === 'function') n.addEventListener(k.slice(2), v);
@@ -438,47 +604,60 @@
       return n;
     };
     const txt = (str) => document.createTextNode(str);
+    // Always set rel="noopener noreferrer" on links opening in new tab
+    const extA = (attrs, children) => {
+      if (attrs.target === '_blank' && !attrs.rel) attrs.rel = 'noopener noreferrer';
+      return el('a', attrs, children);
+    };
     const root = document.getElementById('root');
 
-    // Function to switch language
+    // Function to switch language (preserves scroll position)
     function switchLanguage(lang) {
+      if (lang === currentLang) return;
+      const y = window.scrollY;
       currentLang = lang;
       localStorage.setItem('tmx-lang', lang);
+      syncHtmlLang();
       root.innerHTML = '';
       renderPage();
+      // Restore scroll after layout settles
+      requestAnimationFrame(() => window.scrollTo({ top: y, behavior: 'auto' }));
     }
 
     function renderPage() {
     // NAVBAR
-    const navbar = el('header', {class:'fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-xl shadow-[0_1px_0_rgba(0,0,0,.05)] border-b border-gray-100/80'},
+    const navbar = el('header', {class:'fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-xl shadow-[0_1px_0_rgba(0,0,0,.05)] border-b border-gray-100/80', role:'banner'},
       el('div', {class:'mx-auto max-w-7xl px-6'},
         el('div', {class:'flex items-center justify-between gap-4 py-3'},[
-          el('a', {href:'#home', class:'flex items-center gap-3 group'}, [
-            el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 shadow-md shadow-blue-600/20 group-hover:shadow-lg group-hover:shadow-blue-600/30 transition-shadow'}, [el('i', {'data-lucide':'factory', class:'w-5 h-5 text-white'})]),
+          extA({href:'#home', class:'flex items-center gap-3 group', 'aria-label':'TAUON Smart Industry — início'}, [
+            el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 shadow-md shadow-blue-600/20 group-hover:shadow-lg group-hover:shadow-blue-600/30 transition-shadow'}, [el('i', {'data-lucide':'factory', class:'w-5 h-5 text-white', 'aria-hidden':'true'})]),
             el('div', {class:'leading-none'}, [
-              el('p', {class:'text-sm font-bold tracking-widest text-gray-900'}, [txt(t(C.header).brand || 'TMX SMART INDUSTRY')]),
-              el('p', {class:'-mt-0.5 text-[11px] font-medium uppercase tracking-[0.25em] text-blue-600'}, [txt(t(C.header).owner || 'Tadeu Martins')])
+              el('p', {class:'text-sm font-bold tracking-widest text-gray-900'}, [txt(t(C.header).brand || 'TAUON SMART INDUSTRY')]),
+              el('p', {class:'-mt-0.5 text-[11px] font-medium uppercase tracking-[0.25em] text-blue-600'}, [txt(t(C.header).owner || 'Project Intelligence')])
             ])
           ]),
-          el('nav', {class:'hidden md:flex items-center gap-8 text-sm font-medium text-gray-500'}, [
-            el('a', {href:'#tmxsmartpm', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navSmartPM || 'Pi')]),
-            el('a', {href:'#historia', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navHistory || 'Nossa História')]),
-            el('a', {href:'#sobre', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navAbout || 'Sobre')]),
-            el('a', {href:'#contato', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navContact || 'Contato')])
+          el('nav', {class:'hidden md:flex items-center gap-8 text-sm font-medium text-gray-500', 'aria-label':'Principal'}, [
+            extA({href:'#tmxsmartpm', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navSmartPM || 'Pi')]),
+            extA({href:'#historia', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navHistory || 'Nossa História')]),
+            extA({href:'#sobre', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navAbout || 'Sobre')]),
+            extA({href:'#contato', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navContact || 'Contato')])
           ]),
           el('div', {class:'flex items-center gap-3'}, [
             // Language switcher
-            el('div', {class:'flex gap-0.5 rounded-lg bg-gray-100/80 p-1'}, 
+            el('div', {class:'flex gap-0.5 rounded-lg bg-gray-100/80 p-1', role:'group', 'aria-label':'Selecionar idioma'},
               Object.entries(C.languages || {}).map(([lang, name]) =>
                 el('button', {
+                  type: 'button',
                   class: `px-2.5 py-1 text-xs font-semibold rounded-md transition-all ${currentLang === lang ? 'bg-white text-blue-600 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`,
+                  'aria-label': name,
+                  'aria-pressed': currentLang === lang ? 'true' : 'false',
                   onclick: () => switchLanguage(lang)
                 }, [txt(lang.toUpperCase())])
               )
             ),
-            el('a', {href: (C.linkedin?.profile || '#contato'), target:'_blank', class:'hidden md:inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 px-5 py-2.5 text-sm font-semibold text-white hover:from-blue-700 hover:to-blue-800 shadow-md shadow-blue-600/20 hover:shadow-lg hover:shadow-blue-600/30 transition-all'}, [
-              el('i', {'data-lucide':'linkedin', class:'w-4 h-4'}),
-              txt('LinkedIn')
+            extA({href: '#contato', class:'hidden md:inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 px-5 py-2.5 text-sm font-semibold text-white hover:from-amber-600 hover:to-amber-700 shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/30 transition-all'}, [
+              el('i', {'data-lucide':'calendar-check', class:'w-4 h-4', 'aria-hidden':'true'}),
+              txt(t(C.ui).requestDemo || 'Solicitar Demo')
             ])
           ])
         ])
@@ -486,44 +665,96 @@
     );
     root.appendChild(navbar);
 
-    // HERO (gradient background, no images)
-    const hero = el('section', {id:'home', class:'relative h-[85vh] min-h-[560px] w-full overflow-hidden'},[
-      el('div', {class:'absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900'}),
-      el('div', {class:'absolute inset-0 bg-gradient-to-b from-gray-900/80 via-blue-900/60 to-gray-900/90'}),
-      el('div', {class:'relative z-10 mx-auto flex h-full max-w-7xl items-center px-6'}, [
-        el('div', {class:'max-w-2xl'}, [
-          el('div', {class:'inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 mb-6'}, [
-            el('div', {class:'h-2 w-2 rounded-full bg-blue-400 animate-pulse'}),
-            el('p', {class:'text-sm font-medium text-blue-200'}, [txt(t(C.hero).kicker || '')])
+    // HERO (gradient background + product mockup)
+    const hero = el('section', {id:'home', class:'relative pt-20 pb-16 sm:pt-24 sm:pb-20 w-full overflow-hidden'},[
+      el('div', {class:'absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900', 'aria-hidden':'true'}),
+      el('div', {class:'absolute inset-0 bg-gradient-to-b from-gray-900/80 via-blue-900/60 to-gray-900/90', 'aria-hidden':'true'}),
+      // subtle grid overlay
+      el('div', {class:'absolute inset-0 opacity-[0.04]', 'aria-hidden':'true', style:"background-image:linear-gradient(white 1px,transparent 1px),linear-gradient(90deg,white 1px,transparent 1px);background-size:48px 48px"}),
+      el('div', {class:'relative z-10 mx-auto max-w-7xl px-6'}, [
+        el('div', {class:'grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center'}, [
+          el('div', {class:'lg:col-span-6'}, [
+            el('div', {class:'inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 mb-6'}, [
+              el('div', {class:'h-2 w-2 rounded-full bg-amber-400 animate-pulse', 'aria-hidden':'true'}),
+              el('p', {class:'text-sm font-medium text-blue-100'}, [txt(t(C.hero).kicker || '')])
+            ]),
+            el('h1', {class:'text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-white leading-[1.1]'}, [txt(t(C.hero).heading || '')]),
+            el('p', {class:'mt-6 text-lg leading-relaxed text-blue-100/90 max-w-xl'}, [txt(t(C.hero).subheading || '')]),
+            el('div', {class:'mt-8 flex flex-wrap gap-4'}, [
+              extA({href:(t(C.hero).cta_primary_href||'#tmxsmartpm'), class:'inline-flex items-center gap-2 rounded-xl bg-amber-500 hover:bg-amber-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-amber-500/30 hover:shadow-amber-500/40 transition-all'}, [
+                txt(t(C.hero).cta_primary_text || 'Conheça o Pi'),
+                el('i', {'data-lucide':'arrow-right', class:'h-4 w-4', 'aria-hidden':'true'})
+              ]),
+              extA({href:(t(C.hero).cta_secondary_href||'#historia'), class:'inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/5 backdrop-blur-sm px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/15 transition-all'}, [txt(t(C.hero).cta_secondary_text || 'Nossa História')])
+            ])
           ]),
-          el('h1', {class:'text-4xl font-extrabold tracking-tight sm:text-6xl text-white leading-[1.1]'}, [txt(t(C.hero).heading || '')]),
-          el('p', {class:'mt-6 text-lg leading-relaxed text-blue-100/90'}, [txt(t(C.hero).subheading || '')]),
-          el('div', {class:'mt-8 flex flex-wrap gap-4'}, [
-            el('a', {href:(t(C.hero).cta_primary_href||'#trajetoria'), class:'rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-blue-700 shadow-soft hover:bg-blue-50 transition-all'}, [txt(t(C.hero).cta_primary_text || 'Começar')]),
-            el('a', {href:(t(C.hero).cta_secondary_href||'#contato'), target:'_blank', class:'rounded-xl border border-white/30 bg-white/5 backdrop-blur-sm px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/15 transition-all'}, [txt(t(C.hero).cta_secondary_text || 'Saiba mais')])
+          // Product mockup
+          el('div', {class:'lg:col-span-6 relative'}, [
+            el('div', {class:'relative rounded-2xl overflow-hidden ring-1 ring-white/15 shadow-2xl shadow-black/40 bg-white/5 backdrop-blur-sm'}, [
+              // browser chrome
+              el('div', {class:'flex items-center gap-1.5 px-4 py-2.5 bg-gray-800/80 border-b border-white/10', 'aria-hidden':'true'}, [
+                el('span', {class:'h-2.5 w-2.5 rounded-full bg-red-400/80'}),
+                el('span', {class:'h-2.5 w-2.5 rounded-full bg-yellow-400/80'}),
+                el('span', {class:'h-2.5 w-2.5 rounded-full bg-green-400/80'})
+              ]),
+              el('img', {src:'assets/Gantt.jpg', alt:'Pi — Visão Gantt do cronograma', loading:'eager', class:'w-full h-auto block'})
+            ]),
+            // Floating accent badge
+            el('div', {class:'hidden sm:flex absolute -bottom-5 -left-5 items-center gap-2 rounded-xl bg-white px-4 py-2.5 shadow-lg ring-1 ring-black/5'}, [
+              el('div', {class:'flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500 text-white'}, [el('i', {'data-lucide':'sparkles', class:'h-4 w-4', 'aria-hidden':'true'})]),
+              el('div', {}, [
+                el('p', {class:'text-[10px] font-semibold uppercase tracking-wider text-gray-500'}, [txt('AI Powered')]),
+                el('p', {class:'text-xs font-bold text-gray-900'}, [txt('Pi — Project Intelligence')])
+              ])
+            ])
           ])
         ])
-      ]),
-      el('div', {class:'pointer-events-none absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-white'}, [
-        el('i', {'data-lucide':'mouse', class:'mx-auto h-5 w-5'}),
-        el('p', {class:'text-xs'}, [txt(t(C.ui).scrollHint)])
       ])
     ]);
     root.appendChild(hero);
+
+    // SOCIAL PROOF BAND — stats + trusted-by
+    const stats = el('section', {class:'border-y border-gray-200 bg-white', 'aria-label':'Provas sociais'}, [
+      el('div', {class:'mx-auto max-w-7xl px-6 py-12'}, [
+        el('div', {class:'grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 text-center'}, [
+          el('div', {}, [
+            el('p', {class:'text-4xl sm:text-5xl font-extrabold gradient-text'}, [txt('12+')]),
+            el('p', {class:'mt-2 text-sm text-gray-500 leading-snug'}, [txt(t(C.ui).stats_years_label)])
+          ]),
+          el('div', {}, [
+            el('p', {class:'text-4xl sm:text-5xl font-extrabold text-amber-500'}, [txt('70%')]),
+            el('p', {class:'mt-2 text-sm text-gray-500 leading-snug'}, [txt(t(C.ui).stats_failure_label)])
+          ]),
+          el('div', {}, [
+            el('p', {class:'text-4xl sm:text-5xl font-extrabold gradient-text'}, [txt('3')]),
+            el('p', {class:'mt-2 text-sm text-gray-500 leading-snug'}, [txt(t(C.ui).stats_founders_label)])
+          ])
+        ]),
+        el('div', {class:'mt-10 pt-8 border-t border-gray-100'}, [
+          el('p', {class:'text-center text-xs font-semibold uppercase tracking-widest text-gray-400 mb-5'}, [txt(t(C.ui).trustedBy)]),
+          el('div', {class:'flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-gray-500 font-semibold text-sm sm:text-base'},
+            ['Votorantim Cimentos','InterCement','Siemens','FGV','PMI','Microsoft'].map(name =>
+              el('span', {class:'logo-mark tracking-wide'}, [txt(name)])
+            )
+          )
+        ])
+      ])
+    ]);
+    root.appendChild(stats);
 
     // TAUON - First priority section
     if (C.tmxsmartpm?.enabled) {
       const pm = el('section', {id:'tmxsmartpm', class:'mx-auto max-w-7xl px-6 py-20'}, [
         // Título principal
         el('div', {class:'mx-auto max-w-4xl text-center mb-16'}, [
-          el('p', {class:'mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600'}, [txt(t(C.tmxsmartpm).prelaunch)]),
+          el('p', {class:'mb-3 text-sm font-semibold uppercase tracking-widest text-amber-600'}, [txt(t(C.tmxsmartpm).prelaunch)]),
           el('h2', {class:'text-3xl font-extrabold tracking-tight sm:text-5xl mb-3 text-gray-900'}, [txt(t(C.tmxsmartpm).titulo || 'Pi - TAUON Project Intelligence')]),
           t(C.tmxsmartpm).subtitulo ? el('p', {class:'text-xl text-blue-600 font-medium mb-8'}, [txt(t(C.tmxsmartpm).subtitulo)]) : null,
           el('div', {class:'space-y-4 text-lg text-gray-600 leading-relaxed'}, (t(C.tmxsmartpm).introducao||'').split('\n\n').map(p => el('p', {}, [txt(p)])))
         ]),
-        // Prominent CTA Banner
-        el('div', {class:'mx-auto max-w-5xl mb-16'}, [
-          el('a', {
+        // Prominent CTA Banner (now amber-accented)
+        el('div', {class:'mx-auto max-w-5xl mb-20'}, [
+          extA({
             href: (C.tmxsmartpm.url || '#contato'),
             target: '_blank',
             class: 'block relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 p-1 shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 group'
@@ -531,45 +762,99 @@
             el('div', {class:'bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 rounded-[14px] px-8 py-8 sm:px-12 sm:py-10 text-center'}, [
               el('h3', {class:'text-2xl sm:text-4xl font-extrabold text-white mb-4 drop-shadow-lg'}, [txt(t(C.tmxsmartpm).cta)]),
               el('p', {class:'text-white/90 text-sm sm:text-base mb-5'}, [txt(t(C.ui).transformSchedule)]),
-              el('div', {class:'inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-lg px-5 py-2.5 text-white font-semibold text-sm'}, [
+              el('div', {class:'inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 rounded-lg px-5 py-2.5 text-white font-semibold text-sm transition-colors'}, [
                 txt(currentLang === 'pt' ? 'Acessar agora' : currentLang === 'en' ? 'Access now' : 'Acceder ahora'),
-                el('i', {'data-lucide':'arrow-right', class:'h-5 w-5 group-hover:translate-x-1 transition-transform'})
+                el('i', {'data-lucide':'arrow-right', class:'h-5 w-5 group-hover:translate-x-1 transition-transform', 'aria-hidden':'true'})
               ])
             ])
           ])
         ]),
+
+        // === HOW IT WORKS (3 steps) ===
+        el('div', {class:'mx-auto max-w-5xl mb-20'}, [
+          el('div', {class:'text-center mb-10'}, [
+            el('h3', {class:'text-2xl font-bold tracking-tight sm:text-3xl text-gray-900'}, [txt(t(C.ui).howItWorksTitle)]),
+            el('p', {class:'mt-3 text-gray-500'}, [txt(t(C.ui).howItWorksSubtitle)])
+          ]),
+          el('div', {class:'grid grid-cols-1 md:grid-cols-3 gap-6 relative'},
+            [
+              {n:'1', icon:'pencil-line', title: t(C.ui).step1_title, desc: t(C.ui).step1_desc},
+              {n:'2', icon:'brain-circuit', title: t(C.ui).step2_title, desc: t(C.ui).step2_desc},
+              {n:'3', icon:'rocket', title: t(C.ui).step3_title, desc: t(C.ui).step3_desc}
+            ].map(s =>
+              el('div', {class:'relative rounded-2xl border border-gray-200/80 bg-white p-7 shadow-card hover:shadow-lg transition-all'}, [
+                el('div', {class:'absolute -top-4 left-7 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white text-sm font-bold shadow-md shadow-amber-500/30'}, [txt(s.n)]),
+                el('div', {class:'flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 mb-5 mt-2'}, [el('i', {'data-lucide':s.icon, class:'h-6 w-6', 'aria-hidden':'true'})]),
+                el('h4', {class:'text-lg font-bold text-gray-900 mb-2'}, [txt(s.title)]),
+                el('p', {class:'text-sm text-gray-600 leading-relaxed'}, [txt(s.desc)])
+              ])
+            )
+          )
+        ]),
+
         // Destaque
         el('div', {class:'mx-auto max-w-4xl text-center mb-10'}, [
           el('h3', {class:'text-2xl font-bold tracking-tight sm:text-3xl text-gray-900'}, [txt(t(C.tmxsmartpm).destaque || '')])
         ]),
-        // Features grid
-        el('div', {class:'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mb-16'}, (t(C.tmxsmartpm.features)||[]).map(feature => 
+        // Features grid (now with icons)
+        el('div', {class:'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mb-20'}, (t(C.tmxsmartpm.features)||[]).map(feature =>
           el('div', {class:'rounded-2xl border border-gray-200/80 bg-white p-7 shadow-card hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300'}, [
+            feature.icon ? el('div', {class:'flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white mb-4 shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':feature.icon, class:'h-5 w-5', 'aria-hidden':'true'})]) : null,
             el('h4', {class:'text-lg font-bold mb-3 text-gray-900'}, [txt(feature.titulo)]),
             el('p', {class:'text-sm text-gray-600 leading-relaxed'}, [txt(feature.descricao)])
           ])
         )),
-        // YouTube Video
-        C.youtubeVideoId && /^[\w-]+$/.test(C.youtubeVideoId) ? el('div', {class:'mb-16'}, [
-          el('div', {class:'mx-auto max-w-4xl text-center mb-10'}, [
-            el('h3', {class:'text-2xl font-bold tracking-tight sm:text-3xl text-gray-900'}, [txt(t(C.ui).screenshotsTitle)])
+
+        // === INTEGRATIONS callout ===
+        el('div', {class:'mx-auto max-w-5xl mb-20'}, [
+          el('div', {class:'text-center mb-10'}, [
+            el('h3', {class:'text-2xl font-bold tracking-tight sm:text-3xl text-gray-900'}, [txt(t(C.ui).integrationsTitle)]),
+            el('p', {class:'mt-3 text-gray-500'}, [txt(t(C.ui).integrationsSubtitle)])
           ]),
-          el('div', {class:'mx-auto max-w-4xl'}, [
-            el('div', {class:'relative w-full overflow-hidden rounded-2xl border border-gray-200/80 shadow-card', style:'padding-top:56.25%'}, [
-              el('iframe', {
-                src: 'https://www.youtube.com/embed/' + C.youtubeVideoId + '?rel=0',
+          el('div', {class:'grid grid-cols-1 md:grid-cols-2 gap-6'}, [
+            el('div', {class:'flex flex-col items-center text-center rounded-2xl border border-gray-200/80 bg-white p-8 shadow-card hover:shadow-lg transition-all'}, [
+              el('div', {class:'flex h-20 items-center justify-center mb-5'}, [
+                el('img', {src:'assets/ms-project-logo.jpeg', alt:'Microsoft Project', class:'max-h-20 w-auto object-contain', loading:'lazy'})
+              ]),
+              el('h4', {class:'text-lg font-bold text-gray-900 mb-2'}, [txt('Microsoft Project')]),
+              el('p', {class:'text-sm text-gray-600 leading-relaxed'}, [txt(t(C.ui).integration_msproject_desc)])
+            ]),
+            el('div', {class:'flex flex-col items-center text-center rounded-2xl border border-gray-200/80 bg-white p-8 shadow-card hover:shadow-lg transition-all'}, [
+              el('div', {class:'flex h-20 items-center justify-center mb-5'}, [
+                el('img', {src:'assets/primavera-p6-logo.jpeg', alt:'Oracle Primavera P6', class:'max-h-20 w-auto object-contain', loading:'lazy'})
+              ]),
+              el('h4', {class:'text-lg font-bold text-gray-900 mb-2'}, [txt('Oracle Primavera P6')]),
+              el('p', {class:'text-sm text-gray-600 leading-relaxed'}, [txt(t(C.ui).integration_p6_desc)])
+            ])
+          ])
+        ]),
+
+        // === PRODUCT VIDEO — primary way to see Pi in action ===
+        C.videoUrl ? el('div', {class:'mb-20'}, [
+          el('div', {class:'mx-auto max-w-4xl text-center mb-10'}, [
+            el('h3', {class:'text-2xl font-bold tracking-tight sm:text-3xl text-gray-900'}, [txt(t(C.ui).screenshotsTitle)]),
+            el('p', {class:'mt-3 text-sm text-gray-500'}, [txt(t(C.ui).watchVideo)])
+          ]),
+          el('div', {class:'mx-auto max-w-5xl'}, [
+            el('div', {class:'relative w-full overflow-hidden rounded-2xl ring-1 ring-gray-200 shadow-2xl bg-black', style:'padding-top:56.25%'}, [
+              el('video', {
+                src: C.videoUrl,
                 title: 'TAUON Project Intelligence',
-                class: 'absolute inset-0 w-full h-full border-0',
-                allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
-                allowfullscreen: 'true'
+                class: 'absolute inset-0 w-full h-full',
+                controls: 'true',
+                preload: 'metadata',
+                playsinline: 'true'
               })
             ])
           ])
         ]) : null,
-        // CTAs
+        // CTAs (amber primary)
         el('div', {class:'mx-auto max-w-md flex flex-col gap-5'}, [
-          el('a', {href:(C.tmxsmartpm.url||'#contato'), target:'_blank', class:'inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4 text-base font-semibold text-white hover:from-blue-700 hover:to-blue-800 shadow-md shadow-blue-600/20 hover:shadow-lg transition-all'}, [txt(t(C.ui).accessSmartPM)]),
-          el('a', {href:'#contato', class:'inline-flex items-center justify-center rounded-xl border border-gray-300 px-6 py-4 text-base font-semibold text-gray-700 hover:bg-gray-50 transition-all'}, [txt(t(C.tmxsmartpm).cta_contact)])
+          extA({href:(C.tmxsmartpm.url||'#contato'), target:'_blank', class:'inline-flex items-center justify-center gap-2 rounded-xl bg-amber-500 hover:bg-amber-600 px-6 py-4 text-base font-semibold text-white shadow-md shadow-amber-500/20 hover:shadow-lg transition-all'}, [
+            txt(t(C.ui).accessSmartPM),
+            el('i', {'data-lucide':'external-link', class:'h-4 w-4', 'aria-hidden':'true'})
+          ]),
+          extA({href:'#contato', class:'inline-flex items-center justify-center rounded-xl border border-gray-300 px-6 py-4 text-base font-semibold text-gray-700 hover:bg-gray-50 transition-all'}, [txt(t(C.tmxsmartpm).cta_contact)])
         ])
       ]);
       root.appendChild(pm);
@@ -614,15 +899,13 @@
                 el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'users', class:'h-5 w-5'})]),
                 el('h3', {class:'text-lg font-bold text-gray-900'}, [txt(historiaContent.fundadores_titulo || '')])
               ]),
-              el('ul', {class:'space-y-4'}, (historiaContent.fundadores||[]).map(f => 
-                el('li', {class:'flex items-center justify-between py-1'}, [
-                  el('span', {class:'font-semibold text-gray-900'}, [txt(f.nome)]),
-                  el('a', {href: f.linkedin || '#', target: '_blank', class:'text-blue-600 hover:text-blue-800 flex items-center gap-1.5 text-sm font-medium transition-colors'}, [
-                    el('i', {'data-lucide':'linkedin', class:'h-4 w-4'}),
-                    txt('LinkedIn')
-                  ])
-                ])
-              ))
+              el('ul', {class:'grid grid-cols-1 sm:grid-cols-3 gap-4'}, (historiaContent.fundadores||[]).map(f => {
+                const initials = (f.nome||'').split(/\s+/).filter(Boolean).slice(0,2).map(s=>s[0]).join('').toUpperCase();
+                return el('li', {class:'flex flex-col items-center text-center gap-3 rounded-xl border border-gray-200/80 bg-gray-50/60 p-5 hover:bg-white hover:shadow-md transition-all'}, [
+                  el('div', {class:'flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-blue-700 text-white font-bold text-lg shadow-md shadow-blue-600/20'}, [txt(initials)]),
+                  el('span', {class:'font-semibold text-gray-900'}, [txt(f.nome)])
+                ]);
+              }))
             ])
           ])
         ])
@@ -630,52 +913,21 @@
       root.appendChild(historia);
     }
 
-    // SOBRE (ARTIGOS) - Tabbed section
-    // Section divider
+    // SOBRE (ARTIGOS) - Articles section (former tabbed UI removed: only one tab existed)
     root.appendChild(el('div', {class:'section-divider mx-auto max-w-5xl my-4'}));
     const sobre = el('section', {id:'sobre', class:'mx-auto max-w-7xl px-6 py-20 bg-gray-50/80 rounded-3xl my-8'}, [
       el('div', {class:'mx-auto max-w-3xl text-center mb-14'}, [
-        el('p', {class:'mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600'}, [txt(t(C.ui).about)]),
+        el('p', {class:'mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600'}, [txt(t(C.ui).articles)]),
         el('h2', {class:'text-3xl font-extrabold tracking-tight sm:text-4xl text-gray-900'}, [txt('TAUON Smart Industry')])
       ]),
-      // Tabs container - Gallery tab hidden
-      el('div', {class:'mb-8'}, [
-        el('div', {class:'flex flex-wrap justify-center gap-3 border-b border-gray-200 pb-4'}, [
-          el('button', {class:'tab-btn px-6 py-2 rounded-lg text-sm font-semibold transition bg-blue-600 text-white', 'data-tab':'artigos', onclick:(e)=>switchTab('artigos')}, [txt(t(C.ui).articles)])
-        ])
-      ]),
-      // Tab: Artigos
-      el('div', {class:'tab-content', 'data-tab':'artigos'}, [
-        el('div', {class:'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'}, (C.artigos||[]).map(a => el('a', {href:a.url||'#', target:'_blank', class:'group rounded-2xl border border-gray-200/80 bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'}, [
-          el('h3', {class:'text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors'}, [txt(a.titulo||t(C.ui).article)]),
-          a.descricao ? el('p', {class:'mt-3 text-sm text-gray-500 leading-relaxed'}, [txt(a.descricao)]) : null,
-          el('div', {class:'mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-600'}, [txt(t(C.ui).read), el('i', {'data-lucide':'arrow-right', class:'h-4 w-4 group-hover:translate-x-1 transition-transform'})])
-        ])))
-      ])
-      // Gallery tab hidden
+      el('div', {class:'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'}, (C.artigos||[]).map(a => extA({href:a.url||'#', target:'_blank', class:'group rounded-2xl border border-gray-200/80 bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'}, [
+        el('div', {class:'flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-600 mb-4'}, [el('i', {'data-lucide':'newspaper', class:'h-5 w-5', 'aria-hidden':'true'})]),
+        el('h3', {class:'text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors'}, [txt(a.titulo||t(C.ui).article)]),
+        a.descricao ? el('p', {class:'mt-3 text-sm text-gray-500 leading-relaxed'}, [txt(a.descricao)]) : null,
+        el('div', {class:'mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-600'}, [txt(t(C.ui).read), el('i', {'data-lucide':'arrow-right', class:'h-4 w-4 group-hover:translate-x-1 transition-transform', 'aria-hidden':'true'})])
+      ])))
     ]);
     root.appendChild(sobre);
-
-    // Tab switching function
-    function switchTab(tabName) {
-      document.querySelectorAll('.tab-content').forEach(t => t.classList.add('hidden'));
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        if (btn.getAttribute('data-tab') === tabName) {
-          btn.classList.remove('hover:bg-gray-200', 'text-gray-600');
-          btn.classList.add('bg-blue-600', 'text-white');
-        } else {
-          btn.classList.remove('bg-blue-600', 'text-white');
-          btn.classList.add('text-gray-600', 'hover:bg-gray-200');
-        }
-      });
-      const targetTab = document.querySelector(`.tab-content[data-tab="${tabName}"]`);
-      if (targetTab) {
-        targetTab.classList.remove('hidden');
-        if (typeof lucide !== 'undefined') {
-          lucide.createIcons();
-        }
-      }
-    }
 
     // LIVRO section hidden
 
@@ -687,21 +939,21 @@
         el('p', {class:'mt-4 text-lg text-blue-100/90 leading-relaxed'}, [txt(t(C.ui).contactDescription)])
       ]),
       el('div', {class:'mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3'}, [
-        el('a', {href:'mailto:'+(C.contato?.email||'#'), class:'rounded-2xl bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'}, [
+        extA({href:'mailto:'+(C.contato?.email||'#'), class:'rounded-2xl bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'}, [
           el('div', {class:'flex items-start gap-4'}, [
-            el('div', {class:'flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'mail', class:'h-5 w-5'})]),
-            el('div', {}, [ el('h4', {class:'text-lg font-bold text-gray-900'}, [txt(t(C.ui).email)]), el('p', {class:'text-sm text-gray-500 mt-1'}, [txt(C.contato?.email || '')]) ])
+            el('div', {class:'flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'mail', class:'h-5 w-5', 'aria-hidden':'true'})]),
+            el('div', {}, [ el('h4', {class:'text-lg font-bold text-gray-900'}, [txt(t(C.ui).email)]), el('p', {class:'text-sm text-gray-500 mt-1 break-words'}, [txt(C.contato?.email || '')]) ])
           ])
         ]),
-        el('a', {href:(C.contato?.whatsapp||'#'), target:'_blank', class:'rounded-2xl bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'}, [
+        extA({href:(C.contato?.whatsapp||'#'), target:'_blank', class:'rounded-2xl bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'}, [
           el('div', {class:'flex items-start gap-4'}, [
-            el('div', {class:'flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'phone', class:'h-5 w-5'})]),
+            el('div', {class:'flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'phone', class:'h-5 w-5', 'aria-hidden':'true'})]),
             el('div', {}, [ el('h4', {class:'text-lg font-bold text-gray-900'}, [txt(t(C.ui).whatsapp)]), el('p', {class:'text-sm text-gray-500 mt-1'}, [txt(C.contato?.telefone || '')]) ])
           ])
         ]),
-        el('a', {href:(C.linkedin?.profile||'#'), target:'_blank', class:'rounded-2xl bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'}, [
+        extA({href:(C.linkedin?.profile||'#'), target:'_blank', class:'rounded-2xl bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'}, [
           el('div', {class:'flex items-start gap-4'}, [
-            el('div', {class:'flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'linkedin', class:'h-5 w-5'})]),
+            el('div', {class:'flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'linkedin', class:'h-5 w-5', 'aria-hidden':'true'})]),
             el('div', {}, [ el('h4', {class:'text-lg font-bold text-gray-900'}, [txt(t(C.ui).linkedin)]), el('p', {class:'text-sm text-gray-500 mt-1'}, [txt(t(C.ui).visitProfile)]) ])
           ])
         ])
@@ -709,15 +961,50 @@
     ]);
     root.appendChild(contato);
 
-    // FOOTER
-    const footer = el('footer', {class:'border-t border-gray-200 bg-gray-50'}, [
-      el('div', {class:'mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row'}, [
-        el('p', {class:'text-sm text-gray-500'}, [txt('© '+ new Date().getFullYear() +' '+ t(C.ui).copyright)]),
-        el('div', {class:'flex items-center gap-6 text-sm font-medium text-gray-500'}, [
-          el('a', {href:'#tmxsmartpm', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navSmartPM)]),
-          el('a', {href:'#historia', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navHistory)]),
-          el('a', {href:'#sobre', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navAbout)]),
-          el('a', {href:'#contato', class:'hover:text-blue-600 transition-colors'}, [txt(t(C.header).navContact)])
+    // FOOTER (richer columns)
+    const ui = t(C.ui);
+    const footer = el('footer', {class:'border-t border-gray-200 bg-gray-50', role:'contentinfo'}, [
+      el('div', {class:'mx-auto max-w-7xl px-6 py-12'}, [
+        el('div', {class:'grid grid-cols-1 md:grid-cols-4 gap-8 mb-10'}, [
+          // Brand col
+          el('div', {class:'md:col-span-1'}, [
+            el('div', {class:'flex items-center gap-3 mb-4'}, [
+              el('div', {class:'flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'factory', class:'w-4 h-4 text-white', 'aria-hidden':'true'})]),
+              el('p', {class:'text-sm font-bold tracking-widest text-gray-900'}, [txt(t(C.header).brand || 'TAUON')])
+            ]),
+            el('p', {class:'text-sm text-gray-500 leading-relaxed'}, [txt(t(C.header).owner || 'Project Intelligence')])
+          ]),
+          // Product col
+          el('div', {}, [
+            el('p', {class:'text-xs font-bold uppercase tracking-widest text-gray-900 mb-3'}, [txt(ui.footer_product)]),
+            el('ul', {class:'space-y-2 text-sm text-gray-500'}, [
+              el('li', {}, [extA({href:'#tmxsmartpm', class:'hover:text-blue-600'}, [txt('Pi — Project Intelligence')])]),
+              el('li', {}, [extA({href:'#tmxsmartpm', class:'hover:text-blue-600'}, [txt(ui.integrationsTitle)])]),
+              el('li', {}, [extA({href:'#contato', class:'hover:text-blue-600'}, [txt(ui.requestDemo)])])
+            ])
+          ]),
+          // Company col
+          el('div', {}, [
+            el('p', {class:'text-xs font-bold uppercase tracking-widest text-gray-900 mb-3'}, [txt(ui.footer_company)]),
+            el('ul', {class:'space-y-2 text-sm text-gray-500'}, [
+              el('li', {}, [extA({href:'#historia', class:'hover:text-blue-600'}, [txt(t(C.header).navHistory)])]),
+              el('li', {}, [extA({href:'#sobre', class:'hover:text-blue-600'}, [txt(t(C.header).navAbout)])]),
+              el('li', {}, [extA({href:'#sobre', class:'hover:text-blue-600'}, [txt(ui.articles)])])
+            ])
+          ]),
+          // Contact col
+          el('div', {}, [
+            el('p', {class:'text-xs font-bold uppercase tracking-widest text-gray-900 mb-3'}, [txt(ui.footer_contact)]),
+            el('ul', {class:'space-y-2 text-sm text-gray-500'}, [
+              C.contato?.email ? el('li', {}, [extA({href:'mailto:'+C.contato.email, class:'hover:text-blue-600 break-words'}, [txt(C.contato.email)])]) : null,
+              C.contato?.whatsapp ? el('li', {}, [extA({href:C.contato.whatsapp, target:'_blank', class:'hover:text-blue-600'}, [txt(C.contato.telefone || 'WhatsApp')])]) : null,
+              C.linkedin?.profile ? el('li', {}, [extA({href:C.linkedin.profile, target:'_blank', class:'hover:text-blue-600'}, [txt('LinkedIn')])]) : null
+            ])
+          ])
+        ]),
+        el('div', {class:'border-t border-gray-200 pt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'}, [
+          el('p', {class:'text-xs text-gray-500'}, [txt('© '+ new Date().getFullYear() +' '+ (t(C.ui).copyright||'TAUON Smart Industry.') +' '+ ui.footer_rights)]),
+          el('p', {class:'text-[11px] text-gray-400 leading-relaxed sm:text-right max-w-md'}, [txt(ui.footer_trademarks)])
         ])
       ])
     ]);
@@ -745,6 +1032,21 @@
 
     // Initial render
     renderPage();
+
+    // Scroll progress indicator (set up once, not on each re-render)
+    const progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+      const updateProgress = () => {
+        const h = document.documentElement;
+        const scrolled = h.scrollTop;
+        const max = h.scrollHeight - h.clientHeight;
+        const pct = max > 0 ? (scrolled / max) * 100 : 0;
+        progressBar.style.width = pct + '%';
+      };
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      window.addEventListener('resize', updateProgress);
+      updateProgress();
+    }
   })();
   </script>
 </body>
