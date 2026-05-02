@@ -172,7 +172,7 @@
       "stats_failure_label": "dos projetos industriais não atingem prazo, custo ou escopo",
       "stats_cost_label": "dos projetos sofrem estouro significativo de orçamento",
       "stats_visibility_label": "das organizações não têm visibilidade dos KPIs de seus projetos em tempo real",
-      "gains_title": "Ganhos potenciais com o Pi",
+      "gains_title": "Ganhos potenciais com o Tauon Project Intelligence (Pi)",
       "gains_subtitle": "Resultados esperados ao adotar GenAI e uma plataforma colaborativa de gestão de projetos",
       "gains_productivity_label": "de ganho de produtividade em atividades de planejamento e gestão de projetos com GenAI",
       "gains_schedule_label": "de redução no tempo de criação e atualização de cronogramas com IA generativa",
@@ -226,7 +226,7 @@
       "stats_failure_label": "of industrial projects miss schedule, cost or scope",
       "stats_cost_label": "of projects suffer significant budget overrun",
       "stats_visibility_label": "of organizations have no real-time visibility into their project KPIs",
-      "gains_title": "Potential gains with Pi",
+      "gains_title": "Potential gains with Tauon Project Intelligence (Pi)",
       "gains_subtitle": "Expected results when adopting GenAI and a collaborative project management platform",
       "gains_productivity_label": "productivity gain in project planning and management activities with GenAI",
       "gains_schedule_label": "reduction in the time to create and update schedules with generative AI",
@@ -280,7 +280,7 @@
       "stats_failure_label": "de los proyectos industriales no cumplen plazo, costo o alcance",
       "stats_cost_label": "de los proyectos sufren un sobrecosto significativo",
       "stats_visibility_label": "de las organizaciones no tienen visibilidad de los KPIs de sus proyectos en tiempo real",
-      "gains_title": "Ganancias potenciales con Pi",
+      "gains_title": "Ganancias potenciales con Tauon Project Intelligence (Pi)",
       "gains_subtitle": "Resultados esperados al adoptar GenAI y una plataforma colaborativa de gestión de proyectos",
       "gains_productivity_label": "de ganancia de productividad en actividades de planificación y gestión de proyectos con GenAI",
       "gains_schedule_label": "de reducción en el tiempo de creación y actualización de cronogramas con IA generativa",
@@ -722,7 +722,7 @@
     root.appendChild(stats);
 
     // GAINS BAND — potential ROI / benefits with Pi
-    const gains = el('section', {class:'border-b border-gray-200 bg-emerald-50/40', 'aria-label':'Ganhos potenciais com o Pi'}, [
+    const gains = el('section', {class:'border-b border-gray-200 bg-emerald-50/40', 'aria-label':'Ganhos potenciais com o Tauon Project Intelligence (Pi)'}, [
       el('div', {class:'mx-auto max-w-7xl px-6 py-12'}, [
         el('div', {class:'mx-auto max-w-3xl text-center mb-8'}, [
           el('h2', {class:'text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900'}, [txt(t(C.ui).gains_title)]),
@@ -758,23 +758,26 @@
           el('div', {class:'mx-auto max-w-5xl'}, [
             el('div', {class:'relative w-full overflow-hidden rounded-2xl ring-1 ring-gray-200 shadow-2xl bg-black', style:'padding-top:56.25%'}, [
               el('video', {
-                src: C.videoUrl,
+                src: C.videoUrl + '#t=2',
                 title: 'TAUON Project Intelligence',
                 class: 'absolute inset-0 w-full h-full',
                 controls: 'true',
-                preload: 'metadata',
-                playsinline: 'true'
+                preload: 'auto',
+                playsinline: 'true',
+                onloadedmetadata: function(){ try { if (this.currentTime < 2 && this.duration > 2) { this.currentTime = 2; } } catch (e) { console.warn('Video seek to 2s failed:', e); } }
               })
             ])
           ])
         ]) : null,
 
         // Título principal
-        el('div', {class:'mx-auto max-w-4xl text-center mb-12'}, [
-          el('p', {class:'mb-3 text-sm font-semibold uppercase tracking-widest text-blue-700'}, [txt(t(C.tmxsmartpm).prelaunch)]),
-          el('h2', {class:'text-3xl font-extrabold tracking-tight sm:text-5xl mb-3 text-gray-900'}, [txt(t(C.tmxsmartpm).titulo || 'Pi - TAUON Project Intelligence')]),
-          t(C.tmxsmartpm).subtitulo ? el('p', {class:'text-xl text-blue-600 font-medium mb-8'}, [txt(t(C.tmxsmartpm).subtitulo)]) : null,
-          el('div', {class:'space-y-4 text-lg text-gray-600 leading-relaxed'}, (t(C.tmxsmartpm).introducao||'').split('\n\n').map(p => el('p', {}, [txt(p)])))
+        el('div', {class:'mx-auto max-w-4xl mb-12'}, [
+          el('div', {class:'text-center'}, [
+            el('p', {class:'mb-3 text-sm font-semibold uppercase tracking-widest text-blue-700'}, [txt(t(C.tmxsmartpm).prelaunch)]),
+            el('h2', {class:'text-3xl font-extrabold tracking-tight sm:text-5xl mb-3 text-gray-900'}, [txt(t(C.tmxsmartpm).titulo || 'Pi - TAUON Project Intelligence')]),
+            t(C.tmxsmartpm).subtitulo ? el('p', {class:'text-xl text-blue-600 font-medium mb-8'}, [txt(t(C.tmxsmartpm).subtitulo)]) : null
+          ]),
+          el('div', {class:'space-y-4 text-lg text-gray-600 leading-relaxed text-left'}, (t(C.tmxsmartpm).introducao||'').split('\n\n').map(p => el('p', {}, [txt(p)])))
         ]),
         // Compact CTA Banner — darker blue, less vertical space
         el('div', {class:'mx-auto max-w-3xl mb-16'}, [
@@ -850,30 +853,31 @@
           el('p', {class:'mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600'}, [txt(historiaContent.subtitulo || '')]),
           el('h2', {class:'text-3xl font-extrabold tracking-tight sm:text-5xl text-gray-900'}, [txt(historiaContent.titulo || '')])
         ]),
-        el('div', {class:'grid grid-cols-1 gap-12 lg:grid-cols-3'}, [
-          // Main text
-          el('div', {class:'lg:col-span-2'}, [
-            el('div', {class:'space-y-5 text-gray-600 leading-7 text-lg'}, (historiaContent.texto||'').split('\n\n').map(p => el('p', {}, [txt(p)])))
-          ]),
-          // Side panel with mission and "Why TAUON?"
-          el('aside', {class:'lg:col-span-1 space-y-6'}, [
-            // Mission
-            el('div', {class:'rounded-2xl border border-gray-200/80 bg-gradient-to-br from-blue-50 to-white p-7 shadow-card'}, [
-              el('div', {class:'flex items-center gap-3 mb-5'}, [
-                el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'target', class:'h-5 w-5'})]),
-                el('h3', {class:'text-lg font-bold text-gray-900'}, [txt(historiaContent.missao_titulo || '')])
-              ]),
-              el('p', {class:'text-gray-600 leading-relaxed'}, [txt(historiaContent.missao || '')])
+        el('div', {class:'mx-auto max-w-6xl grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-3 items-stretch'}, [
+          // Story card
+          el('article', {class:'rounded-2xl border border-gray-200/80 bg-white p-7 shadow-card hover:shadow-lg transition-all duration-300 flex flex-col'}, [
+            el('div', {class:'flex items-center gap-3 mb-5'}, [
+              el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'book-open', class:'h-5 w-5', 'aria-hidden':'true'})]),
+              el('h3', {class:'text-lg font-bold text-gray-900'}, [txt(historiaContent.titulo || '')])
             ]),
-            // Why TAUON? — small block correlating the tau particle with the company purpose
-            historiaContent.porque ? el('div', {class:'rounded-2xl border border-gray-200/80 bg-white p-6 shadow-card'}, [
-              el('div', {class:'flex items-center gap-3 mb-3'}, [
-                el('div', {class:'flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-700 to-blue-800 text-white shadow-md shadow-blue-700/20'}, [el('i', {'data-lucide':'atom', class:'h-4 w-4', 'aria-hidden':'true'})]),
-                el('h3', {class:'text-base font-bold text-gray-900'}, [txt(historiaContent.porque_titulo || '')])
-              ]),
-              el('p', {class:'text-sm text-gray-600 leading-relaxed'}, [txt(historiaContent.porque)])
-            ]) : null
-          ])
+            el('div', {class:'space-y-4 text-gray-600 leading-relaxed text-sm'}, (historiaContent.texto||'').split('\n\n').map(p => el('p', {}, [txt(p)])))
+          ]),
+          // Mission card
+          el('article', {class:'rounded-2xl border border-gray-200/80 bg-gradient-to-br from-blue-50 to-white p-7 shadow-card hover:shadow-lg transition-all duration-300 flex flex-col'}, [
+            el('div', {class:'flex items-center gap-3 mb-5'}, [
+              el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'target', class:'h-5 w-5', 'aria-hidden':'true'})]),
+              el('h3', {class:'text-lg font-bold text-gray-900'}, [txt(historiaContent.missao_titulo || '')])
+            ]),
+            el('p', {class:'text-gray-600 leading-relaxed text-sm'}, [txt(historiaContent.missao || '')])
+          ]),
+          // Why TAUON? card
+          historiaContent.porque ? el('article', {class:'rounded-2xl border border-gray-200/80 bg-white p-7 shadow-card hover:shadow-lg transition-all duration-300 flex flex-col'}, [
+            el('div', {class:'flex items-center gap-3 mb-5'}, [
+              el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-700 to-blue-800 text-white shadow-md shadow-blue-700/20'}, [el('i', {'data-lucide':'atom', class:'h-5 w-5', 'aria-hidden':'true'})]),
+              el('h3', {class:'text-lg font-bold text-gray-900'}, [txt(historiaContent.porque_titulo || '')])
+            ]),
+            el('p', {class:'text-gray-600 leading-relaxed text-sm'}, [txt(historiaContent.porque)])
+          ]) : null
         ])
       ]);
       root.appendChild(historia);
