@@ -575,12 +575,13 @@
 
   <script>
   (function(){
-    // Detect language: localStorage > 'pt' (default)
-    // Note: navigator.language is intentionally ignored so that new visitors
-    // always start in Portuguese, regardless of their browser locale.
+    // Detect language: localStorage > navigator > 'pt'
     function detectLang() {
       const saved = localStorage.getItem('tmx-lang');
       if (saved && ['pt','en','es'].includes(saved)) return saved;
+      const nav = (navigator.language || 'pt').toLowerCase();
+      if (nav.startsWith('en')) return 'en';
+      if (nav.startsWith('es')) return 'es';
       return 'pt';
     }
     let currentLang = detectLang();
