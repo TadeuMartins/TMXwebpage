@@ -46,7 +46,7 @@
     "overlay": "bg-gradient-to-b from-black/70 via-black/50 to-blue-950/70",
     "accent": "text-blue-400"
   },
-  "youtubeVideoId": "NeYPgKiglOY",
+  "videoUrl": "https://pub-0543565b5f00486a967499060a10fac0.r2.dev/TAUON%20Apresenta%C3%A7%C3%A3o%20corporativa%20(V3)%20%20(1).mp4",
   "languages": {
     "pt": "Português",
     "en": "English",
@@ -549,19 +549,20 @@
             el('p', {class:'text-sm text-gray-600 leading-relaxed'}, [txt(feature.descricao)])
           ])
         )),
-        // YouTube Video
-        C.youtubeVideoId && /^[\w-]+$/.test(C.youtubeVideoId) ? el('div', {class:'mb-16'}, [
+        // Corporate video (hosted on Cloudflare R2)
+        C.videoUrl ? el('div', {class:'mb-16'}, [
           el('div', {class:'mx-auto max-w-4xl text-center mb-10'}, [
             el('h3', {class:'text-2xl font-bold tracking-tight sm:text-3xl text-gray-900'}, [txt(t(C.ui).screenshotsTitle)])
           ]),
           el('div', {class:'mx-auto max-w-4xl'}, [
-            el('div', {class:'relative w-full overflow-hidden rounded-2xl border border-gray-200/80 shadow-card', style:'padding-top:56.25%'}, [
-              el('iframe', {
-                src: 'https://www.youtube.com/embed/' + C.youtubeVideoId + '?rel=0',
+            el('div', {class:'relative w-full overflow-hidden rounded-2xl border border-gray-200/80 shadow-card bg-black', style:'padding-top:56.25%'}, [
+              el('video', {
+                src: C.videoUrl,
                 title: 'TAUON Project Intelligence',
-                class: 'absolute inset-0 w-full h-full border-0',
-                allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
-                allowfullscreen: 'true'
+                class: 'absolute inset-0 w-full h-full',
+                controls: 'true',
+                preload: 'metadata',
+                playsinline: 'true'
               })
             ])
           ])
