@@ -190,7 +190,6 @@
       "integrationsSubtitle": "Pi conversa em duas vias com as ferramentas que sua engenharia já usa",
       "integration_msproject_desc": "Importação e exportação fluida via COM, sem perda de estrutura, recursos ou linha de base.",
       "integration_p6_desc": "Sincronização bidirecional de cronogramas, atividades e atualizações com o Primavera P6.",
-      "screenshotsHint": "Capturas reais da interface do Pi",
       "watchVideo": "Assistir apresentação",
       "footer_product": "Produto",
       "footer_company": "Empresa",
@@ -241,7 +240,6 @@
       "integrationsSubtitle": "Pi talks both ways with the tools your engineering team already uses",
       "integration_msproject_desc": "Smooth COM-based import and export, with no loss of structure, resources or baseline.",
       "integration_p6_desc": "Bidirectional sync of schedules, activities and updates with Primavera P6.",
-      "screenshotsHint": "Real screenshots of the Pi interface",
       "watchVideo": "Watch presentation",
       "footer_product": "Product",
       "footer_company": "Company",
@@ -292,7 +290,6 @@
       "integrationsSubtitle": "Pi dialoga en dos vías con las herramientas que su ingeniería ya utiliza",
       "integration_msproject_desc": "Importación y exportación fluida vía COM, sin pérdida de estructura, recursos ni línea base.",
       "integration_p6_desc": "Sincronización bidireccional de cronogramas, actividades y actualizaciones con Primavera P6.",
-      "screenshotsHint": "Capturas reales de la interfaz de Pi",
       "watchVideo": "Ver presentación",
       "footer_product": "Producto",
       "footer_company": "Empresa",
@@ -832,43 +829,20 @@
           ])
         ]),
 
-        // === REAL SCREENSHOTS GALLERY ===
-        el('div', {class:'mb-20'}, [
+        // === PRODUCT VIDEO — primary way to see Pi in action ===
+        C.videoUrl ? el('div', {class:'mb-20'}, [
           el('div', {class:'mx-auto max-w-4xl text-center mb-10'}, [
             el('h3', {class:'text-2xl font-bold tracking-tight sm:text-3xl text-gray-900'}, [txt(t(C.ui).screenshotsTitle)]),
-            el('p', {class:'mt-3 text-sm text-gray-500'}, [txt(t(C.ui).screenshotsHint)])
+            el('p', {class:'mt-3 text-sm text-gray-500'}, [txt(t(C.ui).watchVideo)])
           ]),
-          el('div', {class:'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5'},
-            [
-              {src:'assets/Gantt.jpg', label:'Gantt'},
-              {src:'assets/Cards Kanban.jpg', label:'Kanban'},
-              {src:'assets/Status report.jpg', label:'Status Report'},
-              {src:'assets/Resource allocation.jpg', label:'Recursos'},
-              {src:'assets/Agente de IA.jpg', label:'Agente IA'},
-              {src:'assets/Suporte linguas.jpg', label:'Multi-idioma'}
-            ].map(img =>
-              el('figure', {class:'group relative overflow-hidden rounded-xl border border-gray-200/80 bg-white shadow-card hover:shadow-xl hover:-translate-y-0.5 transition-all'}, [
-                el('img', {src: img.src, alt:'Pi — '+img.label, loading:'lazy', class:'w-full h-48 object-cover'}),
-                el('figcaption', {class:'absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent text-white text-xs font-semibold px-3 py-2'}, [txt(img.label)])
-              ])
-            )
-          )
-        ]),
-
-        // Corporate video (smaller, with poster, lazy)
-        C.videoUrl ? el('div', {class:'mb-16'}, [
-          el('div', {class:'mx-auto max-w-3xl text-center mb-8'}, [
-            el('h3', {class:'text-xl font-bold tracking-tight sm:text-2xl text-gray-900'}, [txt(t(C.ui).watchVideo)])
-          ]),
-          el('div', {class:'mx-auto max-w-3xl'}, [
-            el('div', {class:'relative w-full overflow-hidden rounded-2xl border border-gray-200/80 shadow-card bg-black', style:'padding-top:56.25%'}, [
+          el('div', {class:'mx-auto max-w-5xl'}, [
+            el('div', {class:'relative w-full overflow-hidden rounded-2xl ring-1 ring-gray-200 shadow-2xl bg-black', style:'padding-top:56.25%'}, [
               el('video', {
                 src: C.videoUrl,
                 title: 'TAUON Project Intelligence',
-                poster: 'assets/hero.jpg',
                 class: 'absolute inset-0 w-full h-full',
                 controls: 'true',
-                preload: 'none',
+                preload: 'metadata',
                 playsinline: 'true'
               })
             ])
