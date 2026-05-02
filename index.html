@@ -207,9 +207,9 @@
       "missao": "Transformar a gestão de projetos industriais por meio de tecnologia inteligente e metodologias colaborativas, tornando o sucesso a regra, não a exceção.",
       "fundadores_titulo": "Nossos Fundadores",
       "fundadores": [
-        {"nome": "Tadeu Martins", "linkedin": "https://www.linkedin.com/in/tadeu-martins-pmp-tecnologia-industria-engenharia-transformacao-digital-projetos-gestao-inovacao/"},
-        {"nome": "Adriano Resende", "linkedin": "https://www.linkedin.com/in/adriano-resende-7b966a163/"},
-        {"nome": "Sérgio Souza", "linkedin": "https://www.linkedin.com/in/sergiosoud/"}
+        {"nome": "Tadeu Martins"},
+        {"nome": "Adriano Resende"},
+        {"nome": "Sérgio Souza"}
       ]
     },
     "en": {
@@ -220,9 +220,9 @@
       "missao": "Transform industrial project management through intelligent technology and collaborative methodologies, making success the rule, not the exception.",
       "fundadores_titulo": "Our Founders",
       "fundadores": [
-        {"nome": "Tadeu Martins", "linkedin": "https://www.linkedin.com/in/tadeu-martins-pmp-tecnologia-industria-engenharia-transformacao-digital-projetos-gestao-inovacao/"},
-        {"nome": "Adriano Resende", "linkedin": "https://www.linkedin.com/in/adriano-resende-7b966a163/"},
-        {"nome": "Sérgio Souza", "linkedin": "https://www.linkedin.com/in/sergiosoud/"}
+        {"nome": "Tadeu Martins"},
+        {"nome": "Adriano Resende"},
+        {"nome": "Sérgio Souza"}
       ]
     },
     "es": {
@@ -233,9 +233,9 @@
       "missao": "Transformar la gestión de proyectos industriales por medio de tecnología inteligente y metodologías colaborativas, haciendo del éxito la regla, no la excepción.",
       "fundadores_titulo": "Nuestros Fundadores",
       "fundadores": [
-        {"nome": "Tadeu Martins", "linkedin": "https://www.linkedin.com/in/tadeu-martins-pmp-tecnologia-industria-engenharia-transformacao-digital-projetos-gestao-inovacao/"},
-        {"nome": "Adriano Resende", "linkedin": "https://www.linkedin.com/in/adriano-resende-7b966a163/"},
-        {"nome": "Sérgio Souza", "linkedin": "https://www.linkedin.com/in/sergiosoud/"}
+        {"nome": "Tadeu Martins"},
+        {"nome": "Adriano Resende"},
+        {"nome": "Sérgio Souza"}
       ]
     }
   },
@@ -314,6 +314,11 @@
         },
         {
           "icon": "",
+          "titulo": "Integração bidirecional com o Primavera P6",
+          "descricao": "Sincronize cronogramas, atividades e atualizações entre o Pi e o Primavera nos dois sentidos, mantendo todos os dados consistentes."
+        },
+        {
+          "icon": "",
           "titulo": "Visualização em dashboards exclusivos de Business Intelligence",
           "descricao": "Acompanhe KPIs de prazo, custo, avanço físico e desempenho da equipe em tempo real."
         },
@@ -343,6 +348,11 @@
           "icon": "",
           "titulo": "Full integration with Microsoft Project (via COM)",
           "descricao": "Seamless import and export of schedules, without loss of structure."
+        },
+        {
+          "icon": "",
+          "titulo": "Bidirectional integration with Primavera P6",
+          "descricao": "Sync schedules, activities, and updates between Pi and Primavera in both directions, keeping all data consistent."
         },
         {
           "icon": "",
@@ -378,6 +388,11 @@
         },
         {
           "icon": "",
+          "titulo": "Integración bidireccional con Primavera P6",
+          "descricao": "Sincronice cronogramas, actividades y actualizaciones entre Pi y Primavera en ambos sentidos, manteniendo todos los datos consistentes."
+        },
+        {
+          "icon": "",
           "titulo": "Visualización en dashboards exclusivos de Business Intelligence",
           "descricao": "Realice seguimiento de KPIs de plazos, costos, avance físico y rendimiento del equipo en tiempo real."
         },
@@ -408,7 +423,7 @@
     "profile": "https://www.linkedin.com/in/tadeu-martins-pmp-tecnologia-industria-engenharia-transformacao-digital-projetos-gestao-inovacao/?locale=pt_BR"
   },
   "contato": {
-    "email": "Engetec01@gmail.com",
+    "email": "comercial@tauon.com.br",
     "telefone": "+55 (15) 98112-7358",
     "whatsapp": "https://wa.me/5515981127358"
   }
@@ -615,15 +630,13 @@
                 el('div', {class:'flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md shadow-blue-600/20'}, [el('i', {'data-lucide':'users', class:'h-5 w-5'})]),
                 el('h3', {class:'text-lg font-bold text-gray-900'}, [txt(historiaContent.fundadores_titulo || '')])
               ]),
-              el('ul', {class:'space-y-4'}, (historiaContent.fundadores||[]).map(f => 
-                el('li', {class:'flex items-center justify-between py-1'}, [
-                  el('span', {class:'font-semibold text-gray-900'}, [txt(f.nome)]),
-                  el('a', {href: f.linkedin || '#', target: '_blank', class:'text-blue-600 hover:text-blue-800 flex items-center gap-1.5 text-sm font-medium transition-colors'}, [
-                    el('i', {'data-lucide':'linkedin', class:'h-4 w-4'}),
-                    txt('LinkedIn')
-                  ])
-                ])
-              ))
+              el('ul', {class:'grid grid-cols-1 sm:grid-cols-3 gap-4'}, (historiaContent.fundadores||[]).map(f => {
+                const initials = (f.nome||'').split(/\s+/).filter(Boolean).slice(0,2).map(s=>s[0]).join('').toUpperCase();
+                return el('li', {class:'flex flex-col items-center text-center gap-3 rounded-xl border border-gray-200/80 bg-gray-50/60 p-5 hover:bg-white hover:shadow-md transition-all'}, [
+                  el('div', {class:'flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-blue-700 text-white font-bold text-lg shadow-md shadow-blue-600/20'}, [txt(initials)]),
+                  el('span', {class:'font-semibold text-gray-900'}, [txt(f.nome)])
+                ]);
+              }))
             ])
           ])
         ])
