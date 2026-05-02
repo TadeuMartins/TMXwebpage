@@ -177,6 +177,11 @@
       "stats_failure_label": "dos projetos industriais não atingem prazo, custo ou escopo",
       "stats_cost_label": "dos projetos sofrem estouro significativo de orçamento",
       "stats_visibility_label": "das organizações não têm visibilidade dos KPIs de seus projetos em tempo real",
+      "gains_title": "Ganhos potenciais com o Pi",
+      "gains_subtitle": "Resultados esperados ao adotar GenAI e uma plataforma colaborativa de gestão de projetos",
+      "gains_productivity_label": "de ganho de produtividade em atividades de planejamento e gestão de projetos com GenAI",
+      "gains_schedule_label": "de redução no tempo de criação e atualização de cronogramas com IA generativa",
+      "gains_waste_label": "menos desperdício de recursos em organizações com gestão de projetos madura e colaborativa",
       "howItWorksTitle": "Como o Pi funciona",
       "howItWorksSubtitle": "Do escopo ao cronograma otimizado em três passos",
       "step1_title": "Descreva o projeto",
@@ -226,6 +231,11 @@
       "stats_failure_label": "of industrial projects miss schedule, cost or scope",
       "stats_cost_label": "of projects suffer significant budget overrun",
       "stats_visibility_label": "of organizations have no real-time visibility into their project KPIs",
+      "gains_title": "Potential gains with Pi",
+      "gains_subtitle": "Expected results when adopting GenAI and a collaborative project management platform",
+      "gains_productivity_label": "productivity gain in project planning and management activities with GenAI",
+      "gains_schedule_label": "reduction in the time to create and update schedules with generative AI",
+      "gains_waste_label": "less wasted resources in organizations with mature, collaborative project management",
       "howItWorksTitle": "How Pi works",
       "howItWorksSubtitle": "From scope to optimized schedule in three steps",
       "step1_title": "Describe the project",
@@ -275,6 +285,11 @@
       "stats_failure_label": "de los proyectos industriales no cumplen plazo, costo o alcance",
       "stats_cost_label": "de los proyectos sufren un sobrecosto significativo",
       "stats_visibility_label": "de las organizaciones no tienen visibilidad de los KPIs de sus proyectos en tiempo real",
+      "gains_title": "Ganancias potenciales con Pi",
+      "gains_subtitle": "Resultados esperados al adoptar GenAI y una plataforma colaborativa de gestión de proyectos",
+      "gains_productivity_label": "de ganancia de productividad en actividades de planificación y gestión de proyectos con GenAI",
+      "gains_schedule_label": "de reducción en el tiempo de creación y actualización de cronogramas con IA generativa",
+      "gains_waste_label": "menos desperdicio de recursos en organizaciones con gestión de proyectos madura y colaborativa",
       "howItWorksTitle": "Cómo funciona Pi",
       "howItWorksSubtitle": "Del alcance al cronograma optimizado en tres pasos",
       "step1_title": "Describa el proyecto",
@@ -744,6 +759,31 @@
       ])
     ]);
     root.appendChild(stats);
+
+    // GAINS BAND — potential ROI / benefits with Pi
+    const gains = el('section', {class:'border-b border-gray-200 bg-emerald-50/40', 'aria-label':'Ganhos potenciais com o Pi'}, [
+      el('div', {class:'mx-auto max-w-7xl px-6 py-12'}, [
+        el('div', {class:'mx-auto max-w-3xl text-center mb-8'}, [
+          el('h2', {class:'text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900'}, [txt(t(C.ui).gains_title)]),
+          el('p', {class:'mt-2 text-sm sm:text-base text-gray-600'}, [txt(t(C.ui).gains_subtitle)])
+        ]),
+        el('div', {class:'grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 text-center'}, [
+          el('div', {}, [
+            el('p', {class:'text-4xl sm:text-5xl font-extrabold text-emerald-600'}, [txt('+40%')]),
+            el('p', {class:'mt-2 text-sm text-gray-600 leading-snug'}, [txt(t(C.ui).gains_productivity_label)])
+          ]),
+          el('div', {}, [
+            el('p', {class:'text-4xl sm:text-5xl font-extrabold text-emerald-600'}, [txt('-50%')]),
+            el('p', {class:'mt-2 text-sm text-gray-600 leading-snug'}, [txt(t(C.ui).gains_schedule_label)])
+          ]),
+          el('div', {}, [
+            el('p', {class:'text-4xl sm:text-5xl font-extrabold text-emerald-600'}, [txt('28×')]),
+            el('p', {class:'mt-2 text-sm text-gray-600 leading-snug'}, [txt(t(C.ui).gains_waste_label)])
+          ])
+        ])
+      ])
+    ]);
+    root.appendChild(gains);
 
     // TAUON - First priority section
     if (C.tmxsmartpm?.enabled) {
